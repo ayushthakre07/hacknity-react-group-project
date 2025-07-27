@@ -1,5 +1,7 @@
 import React from 'react'
 
+<script src="https://kit.fontawesome.com/cefed47a58.js" crossorigin="anonymous"></script>
+
 function About() {
   return (
     <div>
@@ -11,7 +13,8 @@ function About() {
       <div className='pr-[150px] '>
      <img src='https://avatar.iran.liara.run/public/21' className='size-44 border-2'/>
       <p className='bg-amber-200 border-2 px-2' >Ayush Thakre</p>
-      <p  className='bg-amber-200 border-2 px-2 '>UI/UX Designer</p>
+      <p  className='bg-amber-200 border-2 px-2 '>UI/UX Designer  <i class="fa-brands fa-instagram"></i></p>
+      <i class="fa-brands fa-instagram"></i>
       </div>
          <div className='pr-[150px]'>
      <img src='https://avatar.iran.liara.run/public/21' className='size-44 border-2'/>
