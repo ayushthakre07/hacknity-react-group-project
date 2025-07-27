@@ -1,12 +1,14 @@
 import React from 'react'
 import Button from '../components/Button'
+import About from '../views/About'
 function Home() {
   return (
     <div>
-      <h1 className='bg-amber-300'>Hi there!</h1>
+  <About/>
       <Button BtnTitle={"Submit"}/>
     </div>
   )
 }
 
 export default Home
+git 
