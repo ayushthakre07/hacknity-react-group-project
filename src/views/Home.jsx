@@ -3,8 +3,7 @@ import Button from '../components/Button'
 function Home() {
   return (
     <div>
-      <h1 className='bg-amber-300'>Hi there!</h1>
-      <Button BtnTitle={"Submit"}/>
+    <h1>Home Page</h1>
     </div>
   )
 }
