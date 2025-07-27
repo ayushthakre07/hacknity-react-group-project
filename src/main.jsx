@@ -8,10 +8,13 @@ import About from './views/About';
 import Hackathon from './views/Hackathon';
 import Landing from './views/Landing';
 import Login from './views/Login'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 createRoot(document.getElementById('root')).render(
+   
 <BrowserRouter>
-<Hackathon />
+
 <Routes>
    <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />

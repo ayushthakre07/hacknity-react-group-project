@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../components/Button';
+
 import { MapPin,CalendarDays,Timer } from 'lucide-react';
 
 const cards  = [{name:"IPL",
@@ -34,11 +35,7 @@ const cards  = [{name:"IPL",
               {name:"cricket", location:"nagpur university", city:"nagpur", date:"27/08/2025"},
               {name:"kabbadi", location:"amravati ", city:"delhi", date:"26/08/2025"},
               {name:"cricket", location:"nagpur university", city:"nagpur", date:"27/08/2025"},
-              
-              
-
-
-  
+                
 ];
 
 function Hackathon() {
