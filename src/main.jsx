@@ -11,7 +11,6 @@ import Login from './views/Login'
 
 createRoot(document.getElementById('root')).render(
 <BrowserRouter>
-<Hackathon />
 <Routes>
    <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />
