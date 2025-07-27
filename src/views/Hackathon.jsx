@@ -21,11 +21,7 @@ const cards  = [{name:"IPL", location:"Wankhede Stadium", city:"Mumbai", date:"2
               {name:"cricket", location:"nagpur university", city:"nagpur", date:"27/08/2025"},
               {name:"kabbadi", location:"amravati ", city:"delhi", date:"26/08/2025"},
               {name:"cricket", location:"nagpur university", city:"nagpur", date:"27/08/2025"},
-              
-              
-
-
-  
+                
 ];
 
 function Hackathon() {
