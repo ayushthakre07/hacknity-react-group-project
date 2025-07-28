@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "./../../public/logo.png";
 import { AlignJustify } from "lucide-react";
+import { Link } from "react-router";
 
 function Navbar() {
   const [isHidden, setIsHidden] = useState(true);
@@ -24,16 +25,16 @@ function Navbar() {
         <div
           className={`${
             isHidden ? "hidden" : "flex"
-          } md:flex flex-col md:flex-row items-center justify-between gap-5 w-full md:w-500 border-2 md:border-0 border-gray-400 rounded-lg p-3  text-lg font-semibold `}
+          } md:flex flex-col md:flex-row items-center justify-between gap-5 w-full md:w-570 border-2 md:border-0 border-gray-400 rounded-lg p-3  text-lg font-semibold `}
         >
-          <ul className="flex flex-col md:flex-row gap-5 md:gap-8 text-gray-500">
+          <ul className="flex flex-col md:flex-row gap-5 md:gap-10 text-gray-500">
             <li
               className=" cursor-pointer w-23 md:w-fit"
               onClick={() => {
                 setIsHidden(true);
               }}
             >
-              Home
+              <Link to="/">Home</Link>
             </li>
             <li
               className=" cursor-pointer w-23 md:w-fit"
@@ -41,7 +42,7 @@ function Navbar() {
                 setIsHidden(true);
               }}
             >
-              Hackathon
+              <Link to="/hackathon">Hackathon</Link>
             </li>
             <li
               className=" cursor-pointer w-23 md:w-fit"
@@ -49,7 +50,7 @@ function Navbar() {
                 setIsHidden(true);
               }}
             >
-              About
+              <Link to="/about">About</Link>
             </li>
             <li
               className=" cursor-pointer w-23 md:w-fit"
@@ -57,7 +58,7 @@ function Navbar() {
                 setIsHidden(true);
               }}
             >
-              Dashboad
+              <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>{" "}
           <p
@@ -66,7 +67,7 @@ function Navbar() {
               setIsHidden(true);
             }}
           >
-            Login
+            <Link to="/login">Login</Link>
           </p>
         </div>
       </nav>
