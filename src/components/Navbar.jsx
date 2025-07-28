@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Logo from "./../../public/logo.png";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, KeySquare } from "lucide-react";
 import { Link } from "react-router";
 
-function Navbar() {
+function Navbar({ openPage }) {
   const [isHidden, setIsHidden] = useState(true);
   return (
     <>
@@ -29,7 +29,9 @@ function Navbar() {
         >
           <ul className="flex flex-col md:flex-row gap-5 md:gap-10 text-gray-500">
             <li
-              className=" cursor-pointer w-23 md:w-fit"
+              className={`${
+                openPage === "/" ? "border-b-2" : ""
+              } cursor-pointer w-23 md:w-fit hover:text-black duration-300`}
               onClick={() => {
                 setIsHidden(true);
               }}
@@ -37,7 +39,9 @@ function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li
-              className=" cursor-pointer w-23 md:w-fit"
+              className={`${
+                openPage === "hackathon" ? "border-b-2" : ""
+              } cursor-pointer w-23 md:w-fit hover:text-black duration-300`}
               onClick={() => {
                 setIsHidden(true);
               }}
@@ -45,7 +49,9 @@ function Navbar() {
               <Link to="/hackathon">Hackathon</Link>
             </li>
             <li
-              className=" cursor-pointer w-23 md:w-fit"
+              className={`${
+                openPage === "/about" ? "border-b-2" : ""
+              } cursor-pointer w-23 md:w-fit hover:text-black duration-300`}
               onClick={() => {
                 setIsHidden(true);
               }}
@@ -53,7 +59,9 @@ function Navbar() {
               <Link to="/about">About</Link>
             </li>
             <li
-              className=" cursor-pointer w-23 md:w-fit"
+              className={`${
+                openPage === "/dashboard" ? "border-b-2" : ""
+              } cursor-pointer w-23 md:w-fit hover:text-black duration-300`}
               onClick={() => {
                 setIsHidden(true);
               }}
@@ -62,12 +70,18 @@ function Navbar() {
             </li>
           </ul>{" "}
           <p
-            className=" cursor-pointer w-23 md:w-fit text-gray-500"
+            className=" cursor-pointer w-23 md:w-fit text-gray-600 hover:text-black duration-300"
             onClick={() => {
               setIsHidden(true);
             }}
           >
-            <Link to="/login">Login</Link>
+            <Link
+              to="/login"
+              className="flex gap-2 item-center border px-3 py-1 rounded-md"
+            >
+              <p>Login</p>
+              <KeySquare size={18} className="my-auto" />
+            </Link>
           </p>
         </div>
       </nav>
