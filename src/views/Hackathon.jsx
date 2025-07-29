@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../components/Button';
+import Navbar from '../components/Navbar';
 
 import { MapPin,CalendarDays,Timer } from 'lucide-react';
 
@@ -107,6 +108,7 @@ const cards  = [{name:"IPL",
 function Hackathon() {
   return (
     <div>
+      <Navbar/>
       
   <div className="bg-gray-100  p-8">
   <h1 className="text-3xl font-bold mb-6 text-center #D1EE6B">Upcoming Hackathon Events</h1>
