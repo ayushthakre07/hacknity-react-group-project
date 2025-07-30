@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import Button from "./../components/Button";
-
-function HackathonForm() {
-  return <>snksfkfkandknKdnkjadkjakak</>;
-}
-
-function Hackthon() {
-  return <>Hackthon</>;
-}
+import InputField from "../components/InputField";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
@@ -17,7 +10,7 @@ function Dashboard() {
         <h1 className="text-center text-4xl md:text-5xl">
           Hackathon Hosting Dashboard
         </h1>
-        <div className="flex gap-5 justify-center mt-10">
+        <div className="flex gap-5 justify-center my-10">
           <Button
             BtnTitle={"Create Hackathon"}
             onclick={() => {
@@ -35,6 +28,46 @@ function Dashboard() {
       </div>
     </>
   );
+}
+
+const handleSubmit = () => {
+  sdfskfjiosjf;
+};
+
+function HackathonForm() {
+  return (
+    <>
+      <div>
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-5 items-center"
+        >
+          <InputField type={"text"} placeholder={"Hackathon Title"} />
+          <textarea
+            name="hackathon-description"
+            id="hackathon-description"
+            placeholder="Add Descripption..."
+            className="border"
+          ></textarea>
+          <InputField type={"date"} placeholder={"Hackathon Title"} />
+          <InputField type={"date"} />
+          <InputField type={"text"} placeholder={"Theme"} />
+          <InputField type={"number"} placeholder={"Prizes"} />
+          <textarea
+            name="rules-guidelines"
+            id="rules-guidelines"
+            placeholder="Rules and Guidelines"
+            className="border"
+          ></textarea>
+          <Button BtnTitle={"Submit Hackathon"} />
+        </form>
+      </div>
+    </>
+  );
+}
+
+function Hackthon() {
+  return <>Hackthon</>;
 }
 
 export default Dashboard;
