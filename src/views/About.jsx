@@ -63,7 +63,7 @@ function About() {
       </div>
       <div className='text-center mt-4 text-[60px] font-extrabold text-gray-800'>Join us in our <span className='text-blue-500'>adventures</span> </div>
       <p className='text-center mt-4 text-[40px] ml-60 mr-60 text-gray-600'>Want to join us? We're actively hiring across the board. Get in touch, we would loooove to talk!</p>
-      <div className='text-center mt-4'>z
+      <div className='text-center mt-4'>
       <Button BtnTitle={"Get in touch"} />
       </div>
       <br/>
