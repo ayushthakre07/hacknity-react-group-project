@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../components/Button'
+import Navbar from '../components/Navbar'
 
 function About() {
 
@@ -7,6 +8,7 @@ function About() {
   return (
     
     <div>
+      <Navbar/>
       
       <p className='text-[60px] text-center font-bold'>Versatile team masters every <span className='text-lime-500 transition-colors'>challenge!</span></p>
     <div className='text-[40px] text-center text-gray-500 font-semibold pt-4'>Our Mission: Empowering Builders</div>
@@ -61,7 +63,7 @@ function About() {
       </div>
       <div className='text-center mt-4 text-[60px] font-extrabold text-gray-800'>Join us in our <span className='text-blue-500'>adventures</span> </div>
       <p className='text-center mt-4 text-[40px] ml-60 mr-60 text-gray-600'>Want to join us? We're actively hiring across the board. Get in touch, we would loooove to talk!</p>
-      <div className='text-center mt-4'>
+      <div className='text-center mt-4'>z
       <Button BtnTitle={"Get in touch"} />
       </div>
       <br/>

@@ -8,7 +8,6 @@ function Home() {
     <div>
       <Navbar/>
       <Dashboard/>
-  <About/>
     <h1>Home Page</h1>
 
     </div>

@@ -115,8 +115,8 @@ function Hackathon() {
   </div>
 
       <div className="flex flex-wrap pl-[200px] gap-y-5 gap-x-[30px] bg-gray-100">
-        {cards.map((card) => {
-          return(
+          {cards.map((card) => {
+            return(
             <div class="h-[300px] max-w-[500px]  rounded-[20px] border border-[#D1EE6B] text-center ">
               <div className='font-bold text-left mx-4.5'>
               <h1 className='text-[#485129]' > {card.name}</h1>

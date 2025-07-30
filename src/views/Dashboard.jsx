@@ -6,7 +6,6 @@ function Dashboard() {
 
   return (
     <>
-    <Navbar />
       <div className="bg-gray-100 text-gray-800 font-sans px-26 py-4 flex flex-col gap-10">
         <div className="p-5 bg-white rounded-2xl shadow-md">
           <input
