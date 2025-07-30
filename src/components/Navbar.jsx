@@ -69,7 +69,7 @@ function Navbar({ openPage }) {
               <Link to="/dashboard">Dashboard</Link>
             </li>
           </ul>{" "}
-          <p
+          <div
             className=" cursor-pointer w-23 md:w-fit text-gray-600 hover:text-black duration-300"
             onClick={() => {
               setIsHidden(true);
@@ -82,7 +82,7 @@ function Navbar({ openPage }) {
               <p>Login</p>
               <KeySquare size={18} className="my-auto" />
             </Link>
-          </p>
+          </div>
         </div>
       </nav>
     </>
