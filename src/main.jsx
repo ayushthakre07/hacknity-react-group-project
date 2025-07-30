@@ -10,6 +10,7 @@ import Landing from './views/Landing';
 import Login from './views/Login'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import DiscoverPage from './views/Discover';
 
 createRoot(document.getElementById('root')).render(
    
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
 <Routes>
    <Route path="/" element={<Home />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/discover" element={<DiscoverPage />} />
       <Route path="/about" element={<About/>} />
       <Route path="/hackathon" element={<Hackathon />} />
       <Route path="/landing" element={<Landing/>} />
