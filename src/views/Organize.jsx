@@ -1,9 +1,9 @@
-import Button from "./../components/Button";
-import Navbar from "./../components/Navbar";
+import Button from "../components/Button";
+import Navbar from "../components/Navbar";
 import organizeImg from "./../assets/organize.png";
 import { Link } from "react-router";
 
-function Landing() {
+function Organize() {
   return (
     <>
       <Navbar />
@@ -18,12 +18,12 @@ function Landing() {
             Organize your Hackathon
           </h1>
           <p className="text-base sm:text-lg text-gray-600 mb-8">
-            Host Your Own Hackathon! There's nothing more exciting than
-            creating a space where innovation thrives. Take the leap from
-            participant to organizer and bring your hackathon vision to life!
-            Join hundreds of other organizers on Devfolio — streamline
-            applications, manage submissions, communicate with participants,
-            handle reimbursements, and run judging, all in one place.
+            Host Your Own Hackathon! There's nothing more exciting than creating
+            a space where innovation thrives. Take the leap from participant to
+            organizer and bring your hackathon vision to life! Join hundreds of
+            other organizers on Devfolio — streamline applications, manage
+            submissions, communicate with participants, handle reimbursements,
+            and run judging, all in one place.
           </p>
           <div className="flex justify-center lg:justify-start">
             <Button
@@ -36,4 +36,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default Organize;
