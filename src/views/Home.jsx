@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar";
 import HomeImg from "../../public/Home-1.jpg";
 import JoinUs from "../../public/Join-Us.png";
 import InputBox from "../components/InputBox";
-
+import { UserIcon, MailIcon } from "lucide-react";
+import RightArrow from "../../public/right-arrow.png";
 function Home() {
   return (
     <div>
@@ -41,13 +42,22 @@ function Home() {
         <p className="italic text-2xl font-bold text-center font-serif  py-3  px-4 bg-amber-600 mb-15">
           JOIN US
         </p>
-        <div className="flex  justify-around">
+        <div className="flex  justify-center gap-15">
           <img src={JoinUs} className="h-70" />
 
-         <div>
-          <InputBox type="text" placeholder="Enter Your Name" />
-          <InputBox/>
-         </div>
+          <div className="flex flex-col items-center  py-5">
+            <div className="flex items-center ">
+              <InputBox type="text" placeholder="Enter Your Name"  />
+              <UserIcon  className="size-9"/>
+            </div>
+
+            <div className="flex items-center ">
+              <InputBox type="email" placeholder="Enter Your Email" />
+              <MailIcon  className="size-9"/>
+            </div>
+
+            <img src={RightArrow} className="h-10 my-5"/>
+          </div>
         </div>
       </div>
     </div>

@@ -8,8 +8,7 @@ function InputBox({ placeholder, type, className = "", image }) {
           type={type}
           placeholder={placeholder}
           required
-          className= {`mx-5 my-10 p-3 w-100 text-xl ${className}`}
-          
+          className= {`mx-5 my-5 p-3 w-80 text-xl border-2 ${className}  rounded-2xl`}
         />
       </div>
     </div>
