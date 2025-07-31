@@ -24,6 +24,7 @@ function HackathonForm() {
   const [errorName, setErrorName] = useState();
   const [errorDescription, setErrorDescription] = useState();
   const [errorDate, setErrorDate] = useState();
+  const [errorTime, setErrorTime] = useState();
 
   useEffect(() => {
     if (hackathonData.name === "") {
@@ -55,11 +56,18 @@ function HackathonForm() {
     } else {
       setErrorDate("");
     }
+
+    if (!hackathonData.time) {
+      setErrorTime("Time is required");
+    } else {
+      setErrorTime("");
+    }
   }, [
     hackathonData.name,
     hackathonData.description,
     hackathonData.startDate,
     hackathonData.endDate,
+    hackathonData.time,
   ]);
 
   return (
@@ -150,6 +158,7 @@ function HackathonForm() {
           }
         />
       </div>
+      <span className="text-red-400">{errorTime}</span>
 
       <div className="flex flex-col">
         <Label htmlFor={"location"} labelTitle={"Location"} />
