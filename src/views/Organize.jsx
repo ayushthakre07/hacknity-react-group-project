@@ -2,21 +2,24 @@ import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import organizeImg from "./../assets/organize.png";
 import { Link } from "react-router";
+import Heading from "./../components/Heading";
 
 function Organize() {
   return (
     <>
-      <Navbar />
-      <section className="px-4 py-10 flex flex-col lg:flex-row items-center justify-center gap-8">
+     <Navbar openPage={"/organize"}/>
+      <section className="py-4 pt-10 flex flex-col lg:flex-row items-center justify-center gap-8">
         <img
           src={organizeImg}
           alt="Organize"
           className="w-full max-w-md lg:max-w-lg"
         />
-        <div className="max-w-xl text-center lg:text-left px-4">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Organize your Hackathon
-          </h1>
+        <div className="max-w-[650px] text-center lg:text-left px-4">
+          <Heading
+            headingTitle={"Organize your Hackathon"}
+            customStyle={"lg:text-left! "}
+          />
+
           <p className="text-base sm:text-lg text-gray-600 mb-8">
             Host Your Own Hackathon! There's nothing more exciting than creating
             a space where innovation thrives. Take the leap from participant to

@@ -1,73 +1,42 @@
 import React, { useState } from "react";
+import Navbar from "./../components/Navbar";
 import Button from "./../components/Button";
-import InputField from "../components/InputField";
+import { ButtonSecondary } from "./../components/Button";
+import HackathonForm from "./../components/HackathonForm";
+import HackthonList from "./../components/HackthonList";
+import Heading from "./../components/Heading";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
+
   return (
     <>
-      <div className="my-10">
-        <h1 className="text-center text-4xl md:text-5xl">
-          Hackathon Hosting Dashboard
-        </h1>
-        <div className="flex gap-5 justify-center my-10">
-          <Button
+      <Navbar />
+
+      <div className="bg-gray-50 text-gray-900 px-4 py-8 sm:px-6 lg:px-12">
+        <Heading
+          headingTitle={"Hackathon Hosting Dashboard"}
+          customStyle={"mt-3! mb-10!"}
+        />
+
+        <div className="flex flex-wrap gap-4 justify-center items-center mb-10">
+          <ButtonSecondary
+            onclick={() => setHackathonForm(true)}
             BtnTitle={"Create Hackathon"}
-            onclick={() => {
-              setHackathonForm(true);
-            }}
           />
+
           <Button
+            onclick={() => setHackathonForm(true)}
             BtnTitle={"View Hackathons"}
-            onclick={() => {
-              setHackathonForm(false);
-            }}
           />
         </div>
-        <div> {hackathonForm ? <HackathonForm /> : <Hackthon />}</div>
+
+        <div className="flex justify-center">
+          {hackathonForm ? <HackathonForm /> : <HackthonList />}
+        </div>
       </div>
     </>
   );
-}
-
-const handleSubmit = () => {
-  sdfskfjiosjf;
-};
-
-function HackathonForm() {
-  return (
-    <>
-      <div>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-5 items-center"
-        >
-          <InputField type={"text"} placeholder={"Hackathon Title"} />
-          <textarea
-            name="hackathon-description"
-            id="hackathon-description"
-            placeholder="Add Descripption..."
-            className="border"
-          ></textarea>
-          <InputField type={"date"} placeholder={"Hackathon Title"} />
-          <InputField type={"date"} />
-          <InputField type={"text"} placeholder={"Theme"} />
-          <InputField type={"number"} placeholder={"Prizes"} />
-          <textarea
-            name="rules-guidelines"
-            id="rules-guidelines"
-            placeholder="Rules and Guidelines"
-            className="border"
-          ></textarea>
-          <Button BtnTitle={"Submit Hackathon"} />
-        </form>
-      </div>
-    </>
-  );
-}
-
-function Hackthon() {
-  return <>Hackthon</>;
 }
 
 export default Dashboard;
