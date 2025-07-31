@@ -3,7 +3,7 @@ import Button from '../components/Button';
 import Navbar from '../components/Navbar';
 import Maps from "./../../public/map.png";
 
-import {CalendarDays,Timer } from 'lucide-react';
+import { MapPin,CalendarDays,Timer } from 'lucide-react';
 
 const cards  = [{name:"IPL",
    location:"Wankhede Stadium",
@@ -131,16 +131,14 @@ function Hackathon() {
           <p className="cards-info">{card.city}</p>
           <p className="cards-info">Organizer = {card.organizer}</p>
           <p className="text-[#28e317]">{card.description}</p>
-          <div className="flex pl-[90px] gap-y-5 gap-x-[30px] pt-5 bg-amber-200">
-            <p ><CalendarDays /> Start = {card.date}</p>
+          <div className="flex pl-[90px] gap-y-5 gap-x-[30px] pt-5 className='bg-amber-300">
+            <p className='bg-amber-300'><CalendarDays /> Start = {card.date}</p>
             <p className="cards-info"><Timer /> {card.time}</p>
             <p><Button BtnTitle="Apply Now"  /></p>
-          
+          </div>
         </div>
-         </div>
       ))}
     </div>
-     
   );
 
   return (
