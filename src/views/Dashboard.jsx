@@ -1,37 +1,41 @@
 import React, { useState } from "react";
+import Navbar from "./../components/Navbar";
 import Button from "./../components/Button";
 import InputField from "./../components/InputField";
-import TextArea from "./../components/textArea";
+import TextArea from "./../components/TextArea";
 import Label from "../components/Label";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 p-5">
-      <h1 className="text-center text-4xl md:text-5xl font-bold text-lime-600">
-        Hackathon Hosting Dashboard
-      </h1>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-gray-100 text-gray-900 p-5">
+        <h1 className="text-center text-4xl md:text-5xl font-bold text-gray-600">
+          Hackathon Hosting Dashboard
+        </h1>
 
-      <div className="flex flex-wrap gap-5 justify-center my-10">
-        <Button
-          BtnTitle={"Create Hackathon"}
-          onclick={() => {
-            setHackathonForm(true);
-          }}
-        />
-        <Button
-          BtnTitle={"View Hackathons"}
-          onclick={() => {
-            setHackathonForm(false);
-          }}
-        />
-      </div>
+        <div className="flex flex-wrap gap-5 justify-center my-10">
+          <Button
+            BtnTitle={"Create Hackathon"}
+            onclick={() => {
+              setHackathonForm(true);
+            }}
+          />
+          <Button
+            BtnTitle={"View Hackathons"}
+            onclick={() => {
+              setHackathonForm(false);
+            }}
+          />
+        </div>
 
-      <div className="flex justify-center">
-        {hackathonForm ? <HackathonForm /> : <Hackthon />}
+        <div className="flex justify-center">
+          {hackathonForm ? <HackathonForm /> : <HackthonList />}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -51,6 +55,7 @@ function HackathonForm() {
         <InputField
           type="text"
           id="hackathon-title"
+          name="hackathon-title"
           placeholder="Enter Hackathon Title"
         />
       </div>
@@ -70,12 +75,13 @@ function HackathonForm() {
           <InputField
             type="date"
             id="start-date"
+            name="start-date"
             className="border border-gray-300 px-3 py-2 rounded"
           />
         </div>
         <div className="flex flex-col flex-1">
           <Label htmlFor={"end-date"} labelTitle={"End Date"} />
-          <InputField type="date" id="end-date" />
+          <InputField type="date" id="end-date" name="end-date" />
         </div>
       </div>
 
@@ -84,13 +90,19 @@ function HackathonForm() {
         <InputField
           type="text"
           id="organizer-name"
+          name="organizer-name"
           placeholder="Enter Organizer Name"
         />
       </div>
 
       <div className="flex flex-col">
         <Label htmlFor={"theme"} labelTitle={"Theme"} />
-        <InputField type="text" id="theme" placeholder="Hackathon Theme" />
+        <InputField
+          type="text"
+          id="theme"
+          name="theme"
+          placeholder="Hackathon Theme"
+        />
       </div>
 
       <div className="flex flex-col">
@@ -98,6 +110,7 @@ function HackathonForm() {
         <InputField
           type="number"
           id="prizes"
+          name="prizes"
           placeholder="Total Prize Amount"
         />
       </div>
@@ -119,7 +132,7 @@ function HackathonForm() {
   );
 }
 
-function Hackthon() {
+function HackthonList() {
   return (
     <div className="text-center text-xl font-medium text-gray-800">
       No hackathons available. Try adding one!
