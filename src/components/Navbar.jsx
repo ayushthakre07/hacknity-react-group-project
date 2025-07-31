@@ -9,7 +9,6 @@ const NAV_LINKS = [
   { to: "/discover", navLink: "Discover" },
   { to: "/about", navLink: "About" },
   { to: "/organize", navLink: "Host a Hackathon" },
-  { to: "/dashboard", navLink: "Dashboard" },
 ];
 
 function Navbar({ openPage }) {
@@ -52,7 +51,9 @@ function Navbar({ openPage }) {
                 <li
                   key={to}
                   className={`${
-                    openPage === to ? "border-b-2" : ""
+                    openPage === to
+                      ? "border-b-2 border-lime-400"
+                      : "border-b-2 border-transparent"
                   } cursor-pointer text-center hover:text-black duration-300`}
                   onClick={() => {
                     setIsHidden(true);

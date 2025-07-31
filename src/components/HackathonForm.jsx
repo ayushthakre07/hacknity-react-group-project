@@ -13,7 +13,7 @@ function HackathonForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
+      className="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
     >
       <div className="flex flex-col">
         <Label htmlFor={"hackathon-title"} labelTitle={"Hackathon Title"} />

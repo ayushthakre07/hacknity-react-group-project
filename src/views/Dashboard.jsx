@@ -3,6 +3,7 @@ import Navbar from "./../components/Navbar";
 import Button from "./../components/Button";
 import HackathonForm from "./../components/HackathonForm";
 import HackthonList from "./../components/HackthonList";
+import Heading from "./../components/Heading";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
@@ -10,23 +11,21 @@ function Dashboard() {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-gray-100 text-gray-900 p-5">
-        <h1 className="text-center text-4xl md:text-5xl font-bold text-gray-600">
-          Hackathon Hosting Dashboard
-        </h1>
 
-        <div className="flex flex-wrap gap-5 justify-center my-10">
+      <div className="bg-gray-50 text-gray-900 px-4 py-8 sm:px-6 lg:px-12">
+        <Heading
+          headingTitle={"Hackathon Hosting Dashboard"}
+          customStyle={"mt-3! mb-10!"}
+        />
+
+        <div className="flex flex-wrap gap-4 justify-center items-center mb-10">
           <Button
             BtnTitle={"Create Hackathon"}
-            onclick={() => {
-              setHackathonForm(true);
-            }}
+            onclick={() => setHackathonForm(true)}
           />
           <Button
             BtnTitle={"View Hackathons"}
-            onclick={() => {
-              setHackathonForm(false);
-            }}
+            onclick={() => setHackathonForm(false)}
           />
         </div>
 
