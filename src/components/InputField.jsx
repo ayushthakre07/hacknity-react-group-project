@@ -1,6 +1,6 @@
 import React from "react";
 
-function InputField({ type, placeholder, id, name }) {
+function InputField({ type, placeholder, id, name, onchange }) {
   return (
     <>
       {" "}
@@ -9,7 +9,8 @@ function InputField({ type, placeholder, id, name }) {
         id={id}
         name={name}
         placeholder={placeholder}
-        className="border border-gray-300 px-3 py-2 rounded"
+        onChange={onchange}
+        className="border border-gray-300 px-3 py-2 rounded focus:outline-lime-500"
       />
     </>
   );

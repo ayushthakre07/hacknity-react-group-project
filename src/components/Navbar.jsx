@@ -43,7 +43,7 @@ function Navbar({ openPage }) {
         <div
           className={`${
             isHidden ? "hidden" : "flex"
-          } lg:flex flex-col lg:flex-row items-center justify-between gap-5 w-full lg:w-1000 border-2 lg:border-0 border-gray-500 bg-lime-50 lg:bg-white rounded-lg p-3  text-lg font-semibold `}
+          } lg:flex flex-col lg:flex-row items-center justify-between gap-5 w-full lg:w-1000 border-2 lg:border-0 border-gray-500 bg-lime-50 lg:bg-white rounded-lg pt-3 pb-4 lg:pt-0 lg:pb-0  text-lg font-semibold `}
         >
           <ul className="flex flex-col lg:flex-row gap-5 lg:gap-10 text-gray-500">
             {NAV_LINKS.map((navObj, index) => {
