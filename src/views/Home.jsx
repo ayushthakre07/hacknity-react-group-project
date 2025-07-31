@@ -8,7 +8,8 @@ import RightArrow from "../../public/right-arrow.png";
 import Pic1 from "../../public/pic-1.png";
 import EmailImg from "../../public/email.png";
 import ProfileImg from "../../public/profile.png";
-import Pic2 from "../../public/pic-2.webp";
+import Pic2 from "../../public/pic-2.jpg";
+import Pic6 from "../../public/pic-6.png";
 
 function Home() {
   const [name, setName] = useState("");
@@ -103,7 +104,7 @@ function Home() {
       <hr />
       <hr />
 
-      <div className="flex justify-center gap-15 ">
+      <div className="flex justify-center gap-20 ">
         <div>
           <div className="flex gap-3 mt-20 mb-7">
             <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-white text-5xl font-bold">
@@ -117,13 +118,31 @@ function Home() {
             <br />
             date resume
           </div>
-          <p className="text-xl">Showcase your skills, work experience, projects,<br/>  and socialprofiles — all in one place with your <br/>  digital, always up-to-date resume.<br/> Let the world see what you’ve built and where<br/> you’ve been.</p>
+          <p className="text-xl">
+            Showcase your skills, work experience, projects,
+            <br /> and socialprofiles — all in one place with your <br />{" "}
+            digital, always up-to-date resume.
+            <br /> Let the world see what you’ve built and where
+            <br /> you’ve been.
+          </p>
 
-          <Link to="/Login" className="text-2xl block mt-9 bg-gray-200 w-65 p-3 rounded-2xl text-green-600 font-medium">Create Your Resume</Link>
+          <Link
+            to="/Login"
+            className="text-2xl block mt-9 bg-gray-200 w-65 p-3 rounded-2xl text-green-600 font-medium"
+          >
+            Create Your Resume
+          </Link>
         </div>
 
-        <img src={Pic2} className="h-130 my-20 animate-pulse" />
+        <img src={Pic2} className="h-110 my-20 animate-pulse" />
       </div>
+
+      <hr />
+      <hr />
+
+      <img src={Pic6} className="h-115 block mx-auto my-10 shadow-xl/20" />
+      <he />
+      <hr />
     </div>
   );
 }
