@@ -11,6 +11,10 @@ function About() {
       <span className='cursor-pointer text-lime-500 font-bold'> <a href='https://github.com/Utkarshende/hacknity-react-group-project'target='_blank'>HACKNITY</a></span>, 
       creates opportunities for builders like you. We're excited to help bring your ideas to life.</p>
    
+
+
+
+   
    
     <div className='place-items-end-safe pt-[40px] flex flex-wrap px-[50px] py-[50px] border-2 ml-[200px] mr-[200px]' >
       <div className='border-2 border-amber-500 px-4 py-4 rounded-2xl ml-[20px]'>
