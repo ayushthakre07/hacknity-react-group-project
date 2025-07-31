@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "./../components/Navbar";
 import Button from "./../components/Button";
+import { ButtonSecondary } from "./../components/Button";
 import HackathonForm from "./../components/HackathonForm";
 import HackthonList from "./../components/HackthonList";
 import Heading from "./../components/Heading";
@@ -19,13 +20,14 @@ function Dashboard() {
         />
 
         <div className="flex flex-wrap gap-4 justify-center items-center mb-10">
-          <Button
-            BtnTitle={"Create Hackathon"}
+          <ButtonSecondary
             onclick={() => setHackathonForm(true)}
+            BtnTitle={"Create Hackathon"}
           />
+
           <Button
+            onclick={() => setHackathonForm(true)}
             BtnTitle={"View Hackathons"}
-            onclick={() => setHackathonForm(false)}
           />
         </div>
 
