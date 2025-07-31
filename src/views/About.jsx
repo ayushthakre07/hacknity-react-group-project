@@ -127,12 +127,33 @@ function About() {
 <br/>
 </div>
    
+<<<<<<< HEAD
+
+
+
+   
+   
+    <div className='place-items-end-safe pt-[40px] flex flex-wrap px-[50px] py-[50px] border-2 ml-[200px] mr-[200px]' >
+      <div className='border-2 border-amber-500 px-4 py-4 rounded-2xl ml-[20px]'>
+     <img src='https://avatar.iran.liara.run/public/21' className='size-44  ml-1 '/>
+      <p className='py-4 px-10 bg-amber-400 mt-[-10px] rounded-lg'>Ayush Thakre</p>
+      <p  className='px-10'>UI/UX Designer</p>
+      <div className='flex mt-4 ml-4'>
+      <a href='https://www.instagram.com/' target='_blank'>
+       <img src='https://cdn-icons-png.flaticon.com/128/1384/1384031.png ' className='size-8 bg-gray-300 py-1 px-1 rounded-xl'/></a>
+       <a href='' target='_blank'>
+       <img src='https://cdn-icons-png.flaticon.com/128/1006/1006771.png' className='size-8 bg-gray-300 py-1 px-1 rounded-xl ml-8'/>  
+       </a>
+       <a href='' target='_blank'>
+       <img src='https://cdn-icons-png.flaticon.com/128/646/646094.png' className='size-8 bg-gray-300 py-1 px-1 rounded-xl ml-8'/></a>
+=======
     <div className='place-items-end-safe pt-[40px] flex flex-wrap px-[50px] py-[50px] ml-[200px] mr-[200px] border-2 ' >
     
       {teamMembers.map((member)=>(
 
          <div className='border-2 border-gray-800 px-4 py-4 rounded-2xl ml-[80px] mt-12 items-center'>
      <img src={member.profilephoto} className='size-44  ml-1 '/>
+>>>>>>> 6a1d2d311b9c996adb9dabe60089f8ab5b42587a
       
       <p className='py-4 px-10 bg-amber-300 mt-[-10px] rounded-lg'>{member.name}</p>
       <p  className='px-10 text-center'>{member.role}</p>
