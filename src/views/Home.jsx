@@ -10,6 +10,8 @@ import EmailImg from "../../public/email.png";
 import ProfileImg from "../../public/profile.png";
 import Pic2 from "../../public/pic-2.jpg";
 import Pic6 from "../../public/pic-6.png";
+import ShowCase from "../components/ShowCase";
+import Pic3 from "../../public/pic-3.png";
 
 function Home() {
   const [name, setName] = useState("");
@@ -104,37 +106,20 @@ function Home() {
       <hr />
       <hr />
 
-      <div className="flex justify-center gap-20 ">
-        <div>
-          <div className="flex gap-3 mt-20 mb-7">
-            <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-white text-5xl font-bold">
-              1
-            </div>
-            <div className="w-39 h-16 bg-green-400 rounded-full"></div>
-            <div className="w-16 h-16 bg-blue-400 rounded-full"></div>
-          </div>
-          <div className="font-bold text-5xl mb-5">
-            Your digital up-to-
-            <br />
-            date resume
-          </div>
-          <p className="text-xl">
-            Showcase your skills, work experience, projects,
-            <br /> and socialprofiles — all in one place with your <br />{" "}
-            digital, always up-to-date resume.
-            <br /> Let the world see what you’ve built and where
-            <br /> you’ve been.
-          </p>
-
-          <Link
-            to="/Login"
-            className="text-2xl block mt-9 bg-gray-200 w-65 p-3 rounded-2xl text-green-600 font-medium"
-          >
-            Create Your Resume
-          </Link>
-        </div>
-
-        <img src={Pic2} className="h-110 my-20 animate-pulse" />
+      <div className="flex justify-center gap-20">
+        <ShowCase
+          number="1"
+          color1="bg-gray-800"
+          color2="bg-green-400"
+          color3="bg-blue-400"
+          heading={"Your digital up-to-\ndate resume"}
+          description={
+            "Showcase your skills, work experience, projects,\nand social profiles — all in one place with your\ndigital, always up-to-date resume.\nLet the world see what you’ve built and where\nyou’ve been."
+          }
+          buttonText="Create Your Resume"
+          link="/Login"
+        />
+          <img src={Pic2} className="h-110 my-20 animate-pulse" />
       </div>
 
       <hr />
@@ -143,6 +128,25 @@ function Home() {
       <img src={Pic6} className="h-115 block mx-auto my-10 shadow-xl/20" />
       <he />
       <hr />
+       
+       <div className="flex justify-center gap-35">
+        <img src={Pic3} className="h-100 mt-20"/>
+        <ShowCase
+
+          number="2"
+          color1="bg-gray-800"
+          color2="bg-green-400"
+          color3="bg-blue-400"
+          heading={"A showcase of all \n your projects"}
+          description={
+            "Share your weekend hacks, passion projects,\n or big ideas — invite collaborators and inspire\n the next wave of builders."
+          }
+          buttonText="Add Your Project"
+          
+          link="/Login"
+        />
+      </div>
+      
     </div>
   );
 }
