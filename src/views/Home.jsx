@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import Navbar from "../components/Navbar";
 import InputBox from "../components/InputBox";
-import { UserIcon, MailIcon } from "lucide-react";
 import HomeImg from "../../public/Home-1.jpg";
 import JoinUs from "../../public/Join-Us.png";
 import RightArrow from "../../public/right-arrow.png";
 import Pic1 from "../../public/pic-1.png";
+import EmailImg from "../../public/email.png";
+import ProfileImg from "../../public/profile.png";
+import Pic2 from "../../public/pic-2.webp";
 
 function Home() {
   const [name, setName] = useState("");
@@ -69,7 +71,7 @@ function Home() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              <UserIcon className="size-9" />
+              <img src={ProfileImg} className="size-9" />
             </div>
 
             <div className="flex items-center">
@@ -79,7 +81,8 @@ function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <MailIcon className="size-9" />
+
+              <img src={EmailImg} className="size-9" />
             </div>
 
             <img
@@ -99,6 +102,28 @@ function Home() {
       </div>
       <hr />
       <hr />
+
+      <div className="flex justify-center gap-15 ">
+        <div>
+          <div className="flex gap-3 mt-20 mb-7">
+            <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-white text-5xl font-bold">
+              1
+            </div>
+            <div className="w-39 h-16 bg-green-400 rounded-full"></div>
+            <div className="w-16 h-16 bg-blue-400 rounded-full"></div>
+          </div>
+          <div className="font-bold text-5xl mb-5">
+            Your digital up-to-
+            <br />
+            date resume
+          </div>
+          <p className="text-xl">Showcase your skills, work experience, projects,<br/>  and socialprofiles — all in one place with your <br/>  digital, always up-to-date resume.<br/> Let the world see what you’ve built and where<br/> you’ve been.</p>
+
+          <Link to="/Login" className="text-2xl block mt-9 bg-gray-200 w-65 p-3 rounded-2xl text-green-600 font-medium">Create Your Resume</Link>
+        </div>
+
+        <img src={Pic2} className="h-130 my-20 animate-pulse" />
+      </div>
     </div>
   );
 }
