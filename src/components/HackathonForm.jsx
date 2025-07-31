@@ -23,6 +23,7 @@ function HackathonForm() {
 
   const [errorName, setErrorName] = useState();
   const [errorDescription, setErrorDescription] = useState();
+  const [errorDate, setErrorDate] = useState();
 
   useEffect(() => {
     if (hackathonData.name === "") {
@@ -44,7 +45,22 @@ function HackathonForm() {
     } else {
       setErrorDescription("");
     }
-  }, [hackathonData.name, hackathonData.description]);
+
+    if (!hackathonData.startDate) {
+      setErrorDate("Start Date is required");
+    } else if (!hackathonData.endDate) {
+      setErrorDate("End Date is required");
+    } else if (hackathonData.endDate < hackathonData.startDate) {
+      setErrorDate("End date cannot be before start date");
+    } else {
+      setErrorDate("");
+    }
+  }, [
+    hackathonData.name,
+    hackathonData.description,
+    hackathonData.startDate,
+    hackathonData.endDate,
+  ]);
 
   return (
     <form
@@ -83,34 +99,43 @@ function HackathonForm() {
       </div>
       <span className="text-red-400">{errorDescription}</span>
 
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="flex flex-col flex-1">
-          <Label htmlFor={"start-date"} labelTitle={"Start Date"} />
-          <InputField
-            type="date"
-            id="start-date"
-            name="start-date"
-            value={hackathonData.startDate}
-            onchange={(e) =>
-              setHackathonData((prev) => ({
-                ...prev,
-                startDate: e.target.value,
-              }))
-            }
-          />
+      <div>
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col flex-1">
+            <Label htmlFor={"start-date"} labelTitle={"Start Date"} />
+            <InputField
+              type="date"
+              id="start-date"
+              name="start-date"
+              min={new Date().toISOString().split("T")[0]}
+              value={hackathonData.startDate}
+              onchange={(e) =>
+                setHackathonData((prev) => ({
+                  ...prev,
+                  startDate: e.target.value,
+                }))
+              }
+            />
+          </div>
+
+          <div className="flex flex-col flex-1">
+            <Label htmlFor={"end-date"} labelTitle={"End Date"} />
+            <InputField
+              type="date"
+              id="end-date"
+              name="end-date"
+              min={new Date().toISOString().split("T")[0]}
+              value={hackathonData.endDate}
+              onchange={(e) =>
+                setHackathonData((prev) => ({
+                  ...prev,
+                  endDate: e.target.value,
+                }))
+              }
+            />
+          </div>
         </div>
-        <div className="flex flex-col flex-1">
-          <Label htmlFor={"end-date"} labelTitle={"End Date"} />
-          <InputField
-            type="date"
-            id="end-date"
-            name="end-date"
-            value={hackathonData.endDate}
-            onchange={(e) =>
-              setHackathonData((prev) => ({ ...prev, endDate: e.target.value }))
-            }
-          />
-        </div>
+        <span className="text-red-400">{errorDate}</span>
       </div>
 
       <div className="flex flex-col">
