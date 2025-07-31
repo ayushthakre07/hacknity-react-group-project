@@ -3,12 +3,7 @@ import React from "react";
 function Button({ BtnTitle, onclick, type }) {
   return (
     <div>
-      <button
-        onClick={onclick}
-        className="cursor-pointer bg-lime-500 text-gray-50 border-transparent px-4 py-2 text-sm sm:px-5 sm:py-2 sm:text-base md:text-lg rounded-lg font-semibold transition shadow-md over:shadow-xl active:translate-y-1"
-      >
-        {BtnTitle}
-      </button>
+      <button onClick={onclick} className="bg-[#D1EE6B] py-2 px-4 rounded-md pointer-coarse:p-4 ">{BtnTitle}</button>
     </div>
   );
 }
