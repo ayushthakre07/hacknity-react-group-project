@@ -26,7 +26,7 @@ function Dashboard() {
           />
 
           <Button
-            onclick={() => setHackathonForm(true)}
+            onclick={() => setHackathonForm(false)}
             BtnTitle={"View Hackathons"}
           />
         </div>
