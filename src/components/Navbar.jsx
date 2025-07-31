@@ -18,8 +18,8 @@ function Navbar({ openPage }) {
       <nav className="sticky top-0 bg-white flex-col flex lg:flex-row items-center justify-between lg:justify-around gap-5 lg:gap-15 p-5 shadow-lg">
         <div className="flex justify-between w-full item-center">
           <div className="flex items-center gap-1 cursor-pointer">
-            <img src={Logo} alt="Logo" className="w-8" />
-            <h1 className="text-3xl font-extrabold font-sans text-lime-400">
+            <img src={Logo} alt="Logo" className="w-10" />
+            <h1 className="text-3xl md:text-4xl font-extrabold font-sans text-lime-500">
               Hacknity
             </h1>
           </div>
@@ -51,9 +51,7 @@ function Navbar({ openPage }) {
                 <li
                   key={to}
                   className={`${
-                    openPage === to
-                      ? "border-b-2 border-lime-400"
-                      : "border-b-2 border-transparent"
+                    openPage === to ? "border-b-2 border-lime-500" : ""
                   } cursor-pointer text-center hover:text-black duration-300`}
                   onClick={() => {
                     setIsHidden(true);
@@ -66,14 +64,14 @@ function Navbar({ openPage }) {
           </ul>
 
           <div
-            className=" cursor-pointer text-gray-600 hover:text-black duration-300"
+            className=" cursor-pointer text-gray-600 hover:text-gray-800 duration-300"
             onClick={() => {
               setIsHidden(true);
             }}
           >
             <Link
               to="/login"
-              className="flex gap-2 item-center border px-3 py-1 rounded-md"
+              className="flex gap-2 item-center border-2 text-lime-500 hover:text-lime-600 duration-300 shadow-lg shadow-gray-300 px-3 py-1 rounded-md"
             >
               <p>Login</p>
               <KeySquare size={18} className="my-auto" />
