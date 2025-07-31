@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Logo from "./../../public/logo.png";
-import { AlignJustify, KeySquare } from "lucide-react";
+import { AlignJustify, KeySquare, X } from "lucide-react";
 import { Link } from "react-router";
 
 const NAV_LINKS = [
@@ -23,8 +23,15 @@ function Navbar({ openPage }) {
             <h1 className="text-3xl font-extrabold font-sans">Hacknity</h1>
           </div>
 
+          <X
+            className={`size-8 ${isHidden ? "hidden" : "block"} lg:hidden`}
+            onClick={() => {
+              setIsHidden(!isHidden);
+            }}
+          />
+
           <AlignJustify
-            className="size-8 lg:hidden"
+            className={`size-8 ${isHidden ? "block" : "hidden"} lg:hidden`}
             onClick={() => {
               setIsHidden(!isHidden);
             }}
