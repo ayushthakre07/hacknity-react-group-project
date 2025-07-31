@@ -24,6 +24,7 @@ import Ideas from "../../src/assets/Home/ideas.png";
 import Schedule from "../../src/assets/Home/schedule.png";
 import Software from "../../src/assets/Home/software.png";
 import Heading from "../components/Heading.jsx";
+import ButtonSecondary  from "../components/Button";
 
 function Home() {
   const [name, setName] = useState("");
@@ -126,8 +127,8 @@ function Home() {
           description={
             "Showcase your skills, work experience, projects,\nand social profiles — all in one place with your\ndigital, always up-to-date resume.\nLet the world see what you’ve built and where\nyou’ve been."
           }
-          buttonText="Create Your Resume"
-          link="/Login"
+          buttonText={<ButtonSecondary BtnTitle="Create Your Resume" onclick="/Login" type="text"/>}
+          // link="/Login"
         />
         <img src={Pic2} className="h-110 my-20 animate-pulse" />
       </div>
@@ -150,7 +151,7 @@ function Home() {
           description={
             "Share your weekend hacks, passion projects,\n or big ideas — invite collaborators and inspire\n the next wave of builders."
           }
-          buttonText="Add Your Project"
+          buttonText={<ButtonSecondary BtnTitle="Add Your Project" onclick="/Login" type="text"/>}
           link="/Login"
         />
       </div>
@@ -171,9 +172,10 @@ function Home() {
           description={
             "One-click hackathon applications —\n we save your info so you don’t have to fill it \nout every time.."
           }
-          buttonText="Browse  Hackathon"
+          buttonText={<ButtonSecondary BtnTitle="Browse Hackathon" onclick="/Login" type="text"/>}
           link="/Hackathon"
         />
+       
         <img src={Pic4} className="h-80 mt-30 animate-pulse" />
       </div>
 
@@ -195,7 +197,7 @@ function Home() {
           description={
             "Take our quiz, earn a badge and see where\n you stand among the rest of the builders."
           }
-          buttonText="Take the Quiz"
+          buttonText={<ButtonSecondary BtnTitle="Take the Quiz" onclick="/Login" type="text"/>}
           link="/Login"
         />
       </div>

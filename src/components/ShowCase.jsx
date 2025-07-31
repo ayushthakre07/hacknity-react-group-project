@@ -23,15 +23,15 @@ function ShowCase({
           <div className={`w-16 h-16 ${color3} rounded-full`}></div>
         </div>
 
-        <div className="  whitespace-pre-line text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
+        <div className="whitespace-pre-line text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
           {heading}
         </div>
 
-        <p className="text-xl whitespace-pre-line">{description}</p>
+        <p className="text-xl whitespace-pre-line mb-5">{description}</p>
 
         <Link
           to={link}
-          className={`text-2xl block mt-9 ${color4} w-65 p-3 rounded-2xl ${color5} font-medium`}
+           className="cursor-pointer text-lime-500 border-2 px-4 py-2 text-sm sm:px-5 sm:py-2 sm:text-base md:text-lg rounded-lg font-semibold transition shadow-md hover:shadow-xl active:translate-y-1"
         >
           {buttonText}
         </Link>
