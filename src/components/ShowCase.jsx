@@ -23,7 +23,7 @@ function ShowCase({
           <div className={`w-16 h-16 ${color3} rounded-full`}></div>
         </div>
 
-        <div className="font-bold text-5xl mb-5 whitespace-pre-line">
+        <div className="  whitespace-pre-line text-center text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-6">
           {heading}
         </div>
 

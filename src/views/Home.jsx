@@ -2,27 +2,28 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import Navbar from "../components/Navbar";
 import InputBox from "../components/InputBox";
-import HomeImg from "../../src/assets/Home-1.jpg";
-import JoinUs from "../../src/assets/Join-us.png";
-import RightArrow from "../../src/assets/right-arrow.png";
-import Pic1 from "../../src/assets/pic-1.png";
-import EmailImg from "../../src/assets/email.png";
-import ProfileImg from "../../src/assets/profile.png";
-import Pic2 from "../../src/assets/pic-2.jpg";
-import Pic6 from "../../src/assets/pic-6.png";
+import HomeImg from "../../src/assets/Home/Home-1.jpg";
+import JoinUs from "../../src/assets/Home/Join-us.png";
+import RightArrow from "../../src/assets/Home/right-arrow.png";
+import Pic1 from "../../src/assets/Home/pic-1.png";
+import EmailImg from "../../src/assets/Home/email.png";
+import ProfileImg from "../../src/assets/Home/profile.png";
+import Pic2 from "../../src/assets/Home/pic-2.jpg";
+import Pic6 from "../../src/assets/Home/pic-6.png";
 import ShowCase from "../components/ShowCase";
-import Pic3 from "../../src/assets/pic-3.png";
-import Pic7 from "../../src/assets/pic-7.png";
-import Pic4 from "../../src/assets/pic-4.webp";
-import Pic8 from "../../src/assets/pic-8.png";
-import Pic5 from "../../src/assets/pic-5.jpg";
-import Pic9 from "../../src/assets/pic-9.png";
-import Brainstorm from "../../src/assets/brainstorm.png";
-import Collaboration from "../../src/assets/collaboration.png";
-import Goal from "../../src/assets/goal.png";
-import Ideas from "../../src/assets/ideas.png";
-import Schedule from "../../src/assets/schedule.png";
-import Software from "../../src/assets/software.png";
+import Pic3 from "../../src/assets/Home/pic-3.png";
+import Pic7 from "../../src/assets/Home/pic-7.png";
+import Pic4 from "../../src/assets/Home/pic-4.webp";
+import Pic8 from "../../src/assets/Home/pic-8.png";
+import Pic5 from "../../src/assets/Home/pic-5.jpg";
+import Pic9 from "../../src/assets/Home/pic-9.png";
+import Brainstorm from "../../src/assets/Home/brainstorm.png";
+import Collaboration from "../../src/assets/Home/collaboration.png";
+import Goal from "../../src/assets/Home/goal.png";
+import Ideas from "../../src/assets/Home/ideas.png";
+import Schedule from "../../src/assets/Home/schedule.png";
+import Software from "../../src/assets/Home/software.png";
+import Heading from "../components/Heading.jsx";
 
 function Home() {
   const [name, setName] = useState("");
@@ -39,7 +40,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar openPage={"/home"}/>
       <div className="relative">
         <img
           src={Schedule}
@@ -121,7 +122,7 @@ function Home() {
           color3="bg-blue-400"
           color4="bg-gray-200 "
           color5=" text-green-600"
-          heading={"Your digital up-to-\ndate resume"}
+          heading={<Heading  headingTitle={"Your digital up-to-\ndate resume"} customStyle="text-start"/>}
           description={
             "Showcase your skills, work experience, projects,\nand social profiles — all in one place with your\ndigital, always up-to-date resume.\nLet the world see what you’ve built and where\nyou’ve been."
           }
@@ -145,7 +146,7 @@ function Home() {
           color3="bg-green-400"
           color4="bg-gray-300"
           color5="text-orange-600"
-          heading={"A showcase of all \n your projects"}
+          heading={<Heading  headingTitle={"A showcase of all\n your projects"} customStyle="text-start"/>}
           description={
             "Share your weekend hacks, passion projects,\n or big ideas — invite collaborators and inspire\n the next wave of builders."
           }
@@ -166,7 +167,7 @@ function Home() {
           color3="bg-pink-300"
           color4="bg-gray-300"
           color5="text-pink-600"
-          heading={"Your portal to the\n best hackathons"}
+          heading={<Heading  headingTitle={"Your portal to the\n best hackathons"} customStyle="text-start"/>}
           description={
             "One-click hackathon applications —\n we save your info so you don’t have to fill it \nout every time.."
           }
@@ -190,7 +191,7 @@ function Home() {
           color3="bg-blue-500"
           color4="bg-gray-300"
           color5="text-yellow-700"
-          heading={"Your skill assessment\n playground"}
+          heading={<Heading  headingTitle={"Your skill assessment\n playground"} customStyle="text-start " />}
           description={
             "Take our quiz, earn a badge and see where\n you stand among the rest of the builders."
           }
