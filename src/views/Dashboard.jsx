@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./../components/Navbar";
 import Button from "./../components/Button";
 import HackathonForm from "./../components/HackathonForm";
+import HackthonList from "./../components/HackthonList";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
@@ -34,14 +35,6 @@ function Dashboard() {
         </div>
       </div>
     </>
-  );
-}
-
-function HackthonList() {
-  return (
-    <div className="text-center text-xl font-medium text-gray-800">
-      No hackathons available. Try adding one!
-    </div>
   );
 }
 
