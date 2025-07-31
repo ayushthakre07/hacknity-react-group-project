@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 function About() {
 
- const teamMembers = [
+ const member= [
       {
       name: 'Gajanan Jadhav', 
       role: 'Manager', 
@@ -142,21 +142,12 @@ function About() {
       
       <p className='py-4 px-10 bg-amber-300 mt-[-10px] rounded-lg'>{member.name}</p>
       <p  className='px-10 text-center'>{member.role}</p>
-
-
-      <div className='flex mt-4 ml-1 px-2'>
-        {member.social.map((socialLink) => (
-      <a href={socialLink.url} 
-      target='_blank'>
-       <img src={socialLink.icon}
-        className='size-8 ml-4 bg-gray-200 p-1 rounded-xl transition-transform duration-200 hover:scale-120 hover:bg-gray-300'/></a>
-        ))}
-      </div>
+   
       </div>   
       </div>
       </div>
+       <Footer/>
 </div>
-
   )
 }
 
