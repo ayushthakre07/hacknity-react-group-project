@@ -20,7 +20,9 @@ function Navbar({ openPage }) {
         <div className="flex justify-between w-full item-center">
           <div className="flex items-center gap-1 cursor-pointer">
             <img src={Logo} alt="Logo" className="w-8" />
-            <h1 className="text-3xl font-extrabold font-sans">Hacknity</h1>
+            <h1 className="text-3xl font-extrabold font-sans text-lime-400">
+              Hacknity
+            </h1>
           </div>
 
           <X
