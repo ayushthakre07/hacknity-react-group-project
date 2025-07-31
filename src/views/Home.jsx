@@ -15,6 +15,8 @@ import Pic3 from "../../public/pic-3.png";
 import Pic7 from "../../public/pic-7.png";
 import Pic4 from "../../public/pic-4.webp";
 import Pic8 from "../../public/pic-8.png";
+import Pic5 from "../../public/pic-5.jpg";
+import Pic9 from "../../public/pic-9.png";
 function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -59,8 +61,7 @@ function Home() {
         />
         <img src={HomeImg} className="block mx-auto my-20 w-200" />
       </div>
-      <hr />
-      <hr />
+    
       <div>
         <p className="italic text-2xl font-bold text-center font-serif py-3 px-4 mb-15 my-5">
           JOIN US
@@ -99,16 +100,14 @@ function Home() {
           </div>
         </div>
       </div>
-      <hr />
-      <hr />
+     
 
       <div>
         <img src={Pic1} className="my-15 h-120 block mx-auto" />
       </div>
-      <hr />
-      <hr />
+      
 
-      <div className="flex justify-center gap-20">
+      <div className="flex justify-center gap-40">
         <ShowCase
           number="1"
           color1="bg-gray-800"
@@ -126,14 +125,12 @@ function Home() {
         <img src={Pic2} className="h-110 my-20 animate-pulse" />
       </div>
 
-      <hr />
-      <hr />
+    
 
       <img src={Pic6} className="h-115 block mx-auto my-10 shadow-xl/20" />
-      <hr />
-      <hr />
+      
 
-      <div className="flex justify-center gap-35 mb-15">
+      <div className="flex justify-center gap-40 mb-15">
         <img src={Pic3} className="h-100 mt-20  animate-pulse" />
         <ShowCase
           number="2"
@@ -150,12 +147,10 @@ function Home() {
           link="/Login"
         />
       </div>
-      <hr />
-      <hr />
+      
 
       <img src={Pic7} className="h-115 block mx-auto my-10 shadow-xl/20" />
-      <hr />
-      <hr />
+      
 
       <div className="flex justify-center gap-40 mb-20">
         <ShowCase
@@ -169,18 +164,37 @@ function Home() {
           description={
             "One-click hackathon applications —\n we save your info so you don’t have to fill it \nout every time.."
           }
-          buttonText="Add Your Project"
-          link="/Login"
+          buttonText="Browse  Hackathon"
+          link="/Hackathon"
         />
         <img src={Pic4} className="h-80 mt-30 animate-pulse" />
       </div>
 
-      <hr />
-      <hr />
+   
 
       <img src={Pic8} className="h-115 block mx-auto my-10 shadow-xl/20" />
-      <hr />
-      <hr />
+      
+
+      <div className="flex justify-center gap-40 mb-20">
+        <img src={Pic5} className="h-80 mt-30 animate-pulse" />
+        <ShowCase
+          number="4"
+          color1="bg-black"
+          color2="bg-yellow-300"
+          color3="bg-blue-500"
+          color4="bg-gray-300"
+          color5="text-yellow-700"
+          heading={"Your skill assessment\n playground"}
+          description={
+            "Take our quiz, earn a badge and see where\n you stand among the rest of the builders."
+          }
+          buttonText="Take the Quiz"
+          link="/Login"
+        />
+      </div>
+      
+      <img src={Pic9} className="h-115 block mx-auto my-10 shadow-xl/20"/>
+
     </div>
   );
 }
