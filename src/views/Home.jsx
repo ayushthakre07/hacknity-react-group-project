@@ -12,7 +12,9 @@ import Pic2 from "../../public/pic-2.jpg";
 import Pic6 from "../../public/pic-6.png";
 import ShowCase from "../components/ShowCase";
 import Pic3 from "../../public/pic-3.png";
-
+import Pic7 from "../../public/pic-7.png";
+import Pic4 from "../../public/pic-4.webp";
+import Pic8 from "../../public/pic-8.png";
 function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -112,6 +114,8 @@ function Home() {
           color1="bg-gray-800"
           color2="bg-green-400"
           color3="bg-blue-400"
+          color4="bg-gray-200 "
+          color5=" text-green-600"
           heading={"Your digital up-to-\ndate resume"}
           description={
             "Showcase your skills, work experience, projects,\nand social profiles — all in one place with your\ndigital, always up-to-date resume.\nLet the world see what you’ve built and where\nyou’ve been."
@@ -119,34 +123,64 @@ function Home() {
           buttonText="Create Your Resume"
           link="/Login"
         />
-          <img src={Pic2} className="h-110 my-20 animate-pulse" />
+        <img src={Pic2} className="h-110 my-20 animate-pulse" />
       </div>
 
       <hr />
       <hr />
 
       <img src={Pic6} className="h-115 block mx-auto my-10 shadow-xl/20" />
-      <he />
       <hr />
-       
-       <div className="flex justify-center gap-35">
-        <img src={Pic3} className="h-100 mt-20"/>
-        <ShowCase
+      <hr />
 
+      <div className="flex justify-center gap-35 mb-15">
+        <img src={Pic3} className="h-100 mt-20  animate-pulse" />
+        <ShowCase
           number="2"
-          color1="bg-gray-800"
-          color2="bg-green-400"
-          color3="bg-blue-400"
+          color1="bg-black"
+          color2="bg-orange-300"
+          color3="bg-green-400"
+          color4="bg-gray-300"
+          color5="text-orange-600"
           heading={"A showcase of all \n your projects"}
           description={
             "Share your weekend hacks, passion projects,\n or big ideas — invite collaborators and inspire\n the next wave of builders."
           }
           buttonText="Add Your Project"
-          
           link="/Login"
         />
       </div>
-      
+      <hr />
+      <hr />
+
+      <img src={Pic7} className="h-115 block mx-auto my-10 shadow-xl/20" />
+      <hr />
+      <hr />
+
+      <div className="flex justify-center gap-40 mb-20">
+        <ShowCase
+          number="3"
+          color1="bg-black"
+          color2="bg-orange-200"
+          color3="bg-pink-300"
+          color4="bg-gray-300"
+          color5="text-pink-600"
+          heading={"Your portal to the\n best hackathons"}
+          description={
+            "One-click hackathon applications —\n we save your info so you don’t have to fill it \nout every time.."
+          }
+          buttonText="Add Your Project"
+          link="/Login"
+        />
+        <img src={Pic4} className="h-80 mt-30 animate-pulse" />
+      </div>
+
+      <hr />
+      <hr />
+
+      <img src={Pic8} className="h-115 block mx-auto my-10 shadow-xl/20" />
+      <hr />
+      <hr />
     </div>
   );
 }

@@ -6,6 +6,8 @@ function ShowCase({
   color1,
   color2,
   color3,
+  color4,
+  color5,
   heading,
   description,
   buttonText,
@@ -29,7 +31,7 @@ function ShowCase({
 
         <Link
           to={link}
-          className="text-2xl block mt-9 bg-gray-200 w-65 p-3 rounded-2xl text-green-600 font-medium"
+          className={`text-2xl block mt-9 ${color4} w-65 p-3 rounded-2xl ${color5} font-medium`}
         >
           {buttonText}
         </Link>
