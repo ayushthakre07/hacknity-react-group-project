@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "./../components/Button";
 import InputField from "./../components/InputField";
 import TextArea from "./../components/textArea";
+import Label from "../components/Label";
 
 function Dashboard() {
   const [hackathonForm, setHackathonForm] = useState(true);
@@ -46,12 +47,7 @@ function HackathonForm() {
       className="bg-white shadow-md rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
     >
       <div className="flex flex-col">
-        <label
-          htmlFor="hackathon-title"
-          className="mb-1 text-gray-700 font-medium"
-        >
-          Hackathon Title
-        </label>
+        <Label htmlFor={"hackathon-title"} labelTitle={"Hackathon Title"} />
         <InputField
           type="text"
           id="hackathon-title"
@@ -60,12 +56,7 @@ function HackathonForm() {
       </div>
 
       <div className="flex flex-col">
-        <label
-          htmlFor="hackathon-description"
-          className="mb-1 text-gray-700 font-medium"
-        >
-          Description
-        </label>
+        <Label htmlFor={"hackathon-description"} labelTitle={"Description"} />
         <TextArea
           name={"hackathon-description"}
           id={"hackathon-description"}
@@ -75,12 +66,7 @@ function HackathonForm() {
 
       <div className="flex flex-col md:flex-row gap-6">
         <div className="flex flex-col flex-1">
-          <label
-            htmlFor="start-date"
-            className="mb-1 text-gray-700 font-medium"
-          >
-            Start Date
-          </label>
+          <Label htmlFor={"start-date"} labelTitle={"Start Date"} />
           <InputField
             type="date"
             id="start-date"
@@ -88,20 +74,13 @@ function HackathonForm() {
           />
         </div>
         <div className="flex flex-col flex-1">
-          <label htmlFor="end-date" className="mb-1 text-gray-700 font-medium">
-            End Date
-          </label>
+          <Label htmlFor={"end-date"} labelTitle={"End Date"} />
           <InputField type="date" id="end-date" />
         </div>
       </div>
 
       <div className="flex flex-col">
-        <label
-          htmlFor="organizer-name"
-          className="mb-1 text-gray-700 font-medium"
-        >
-          Organizer's Name
-        </label>
+        <Label htmlFor={"organizer-name"} labelTitle={"Organizer's Name"} />
         <InputField
           type="text"
           id="organizer-name"
@@ -110,16 +89,12 @@ function HackathonForm() {
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="theme" className="mb-1 text-gray-700 font-medium">
-          Theme
-        </label>
+        <Label htmlFor={"theme"} labelTitle={"Theme"} />
         <InputField type="text" id="theme" placeholder="Hackathon Theme" />
       </div>
 
       <div className="flex flex-col">
-        <label htmlFor="prizes" className="mb-1 text-gray-700 font-medium">
-          Prizes
-        </label>
+        <Label htmlFor={"prizes"} labelTitle={"Prizes"} />
         <InputField
           type="number"
           id="prizes"
@@ -128,12 +103,10 @@ function HackathonForm() {
       </div>
 
       <div className="flex flex-col">
-        <label
-          htmlFor="rules-guidelines"
-          className="mb-1 text-gray-700 font-medium"
-        >
-          Rules and Guidelines
-        </label>
+        <Label
+          htmlFor={"rules-guidelines"}
+          labelTitle={"Rules and Guidelines"}
+        />
         <TextArea
           name={"rules-guidelines"}
           id={"rules-guidelines"}
