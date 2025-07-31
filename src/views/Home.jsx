@@ -2,21 +2,28 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router";
 import Navbar from "../components/Navbar";
 import InputBox from "../components/InputBox";
-import HomeImg from "../../public/Home-1.jpg";
-import JoinUs from "../../public/Join-Us.png";
-import RightArrow from "../../public/right-arrow.png";
-import Pic1 from "../../public/pic-1.png";
-import EmailImg from "../../public/email.png";
-import ProfileImg from "../../public/profile.png";
-import Pic2 from "../../public/pic-2.jpg";
-import Pic6 from "../../public/pic-6.png";
+import HomeImg from "../../src/assets/Home-1.jpg";
+import JoinUs from "../../src/assets/Join-us.png";
+import RightArrow from "../../src/assets/right-arrow.png";
+import Pic1 from "../../src/assets/pic-1.png";
+import EmailImg from "../../src/assets/email.png";
+import ProfileImg from "../../src/assets/profile.png";
+import Pic2 from "../../src/assets/pic-2.jpg";
+import Pic6 from "../../src/assets/pic-6.png";
 import ShowCase from "../components/ShowCase";
-import Pic3 from "../../public/pic-3.png";
-import Pic7 from "../../public/pic-7.png";
-import Pic4 from "../../public/pic-4.webp";
-import Pic8 from "../../public/pic-8.png";
-import Pic5 from "../../public/pic-5.jpg";
-import Pic9 from "../../public/pic-9.png";
+import Pic3 from "../../src/assets/pic-3.png";
+import Pic7 from "../../src/assets/pic-7.png";
+import Pic4 from "../../src/assets/pic-4.webp";
+import Pic8 from "../../src/assets/pic-8.png";
+import Pic5 from "../../src/assets/pic-5.jpg";
+import Pic9 from "../../src/assets/pic-9.png";
+import Brainstorm from "../../src/assets/brainstorm.png";
+import Collaboration from "../../src/assets/collaboration.png";
+import Goal from "../../src/assets/goal.png";
+import Ideas from "../../src/assets/ideas.png";
+import Schedule from "../../src/assets/schedule.png";
+import Software from "../../src/assets/software.png";
+
 function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,30 +40,29 @@ function Home() {
   return (
     <div>
       <Navbar />
-
       <div className="relative">
         <img
-          src="/schedule.png"
+          src={Schedule}
           className="h-20 animate-bounce opacity-65 duration-75 rotate-350 absolute left-60"
         />
         <img
-          src="/software.png"
+          src={Software}
           className="h-20 animate-bounce opacity-65 duration-75 rotate-5 absolute right-50"
         />
         <img
-          src="/goal.png"
+          src={Goal}
           className="h-20 animate-bounce opacity-65 duration-75 rotate-350 absolute bottom-5 left-60"
         />
         <img
-          src="/collaboration.png"
+          src={Collaboration}
           className="h-25 animate-bounce opacity-65 duration-75 rotate-5 absolute right-50 bottom-0"
         />
         <img
-          src="/ideas.png"
+          src={Ideas}
           className="h-20 animate-bounce opacity-55 duration-75 rotate-5 absolute right-20 bottom-60"
         />
         <img
-          src="/brainstorm.png"
+          src={Brainstorm}
           className="h-25 animate-bounce opacity-65 duration-75 rotate-350 absolute bottom-60 left-20"
         />
         <img src={HomeImg} className="block mx-auto my-20 w-200" />
@@ -107,7 +113,7 @@ function Home() {
       </div>
       
 
-      <div className="flex justify-center gap-40">
+      <div className="flex justify-center gap-60">
         <ShowCase
           number="1"
           color1="bg-gray-800"
@@ -130,7 +136,7 @@ function Home() {
       <img src={Pic6} className="h-115 block mx-auto my-10 shadow-xl/20" />
       
 
-      <div className="flex justify-center gap-40 mb-15">
+      <div className="flex justify-center gap-60 mb-15">
         <img src={Pic3} className="h-100 mt-20  animate-pulse" />
         <ShowCase
           number="2"
@@ -152,7 +158,7 @@ function Home() {
       <img src={Pic7} className="h-115 block mx-auto my-10 shadow-xl/20" />
       
 
-      <div className="flex justify-center gap-40 mb-20">
+      <div className="flex justify-center gap-60 mb-20">
         <ShowCase
           number="3"
           color1="bg-black"
@@ -175,7 +181,7 @@ function Home() {
       <img src={Pic8} className="h-115 block mx-auto my-10 shadow-xl/20" />
       
 
-      <div className="flex justify-center gap-40 mb-20">
+      <div className="flex justify-center  gap-60 mb-20">
         <img src={Pic5} className="h-80 mt-30 animate-pulse" />
         <ShowCase
           number="4"
