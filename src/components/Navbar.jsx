@@ -2,6 +2,7 @@ import { useState } from "react";
 import Logo from "./../../public/logo.png";
 import { AlignJustify, KeySquare, X } from "lucide-react";
 import { Link } from "react-router";
+import { ButtonSecondary } from "./../components/Button";
 
 const NAV_LINKS = [
   { to: "/", navLink: "Home" },
@@ -42,7 +43,7 @@ function Navbar({ openPage }) {
         <div
           className={`${
             isHidden ? "hidden" : "flex"
-          } lg:flex flex-col lg:flex-row items-center justify-between gap-5 w-full lg:w-1000 border-2 lg:border-0 border-gray-400 rounded-lg p-3  text-lg font-semibold `}
+          } lg:flex flex-col lg:flex-row items-center justify-between gap-5 w-full lg:w-1000 border-2 lg:border-0 border-gray-500 bg-lime-50 lg:bg-white rounded-lg p-3  text-lg font-semibold `}
         >
           <ul className="flex flex-col lg:flex-row gap-5 lg:gap-10 text-gray-500">
             {NAV_LINKS.map((navObj, index) => {
@@ -69,13 +70,14 @@ function Navbar({ openPage }) {
               setIsHidden(true);
             }}
           >
-            <Link
-              to="/login"
-              className="flex gap-2 item-center border-2 text-lime-500 hover:text-lime-600 duration-300 shadow-lg shadow-gray-300 px-3 py-1 rounded-md"
-            >
-              <p>Login</p>
-              <KeySquare size={18} className="my-auto" />
-            </Link>
+            <ButtonSecondary
+              BtnTitle={
+                <Link to="/login" className="flex gap-2 item-center ">
+                  <p>Login</p>
+                  <KeySquare size={18} className="my-auto" />
+                </Link>
+              }
+            />
           </div>
         </div>
       </nav>
