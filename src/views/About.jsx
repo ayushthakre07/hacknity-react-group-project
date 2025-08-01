@@ -1,77 +1,11 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer';
+import { MEMBERS } from '../components/cards/Aboutcard';
 
 function About() {
-
- const members= [
-      {
-      name: 'Gajanan Jadhav', 
-      role: 'Manager', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    },
-    {
-      name: 'Mahesh Jadhav', 
-      role: ' Team Leader', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    },
-    {
-      name: 'Srushti Wanjari', 
-      role: ' Developer', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    },
-   {
-      name: 'Ravikant Tarare', 
-      role: 'Developer', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    },
-       {
-      name: 'Ayush Thakre', 
-      role: 'UI/UX Designer', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    },
-      {
-      name: 'Utkarsh Shende', 
-      role: 'Developer', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
-      social: [
-        { url: 'https://www.instagram.com/', icon: 'https://cdn-icons-png.flaticon.com/128/1384/1384031.png' },
-        {  url: 'https://twitter.com/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
-        {  url: 'https://github.com/', icon: 'https://cdn-icons-png.flaticon.com/128/646/646094.png' },
-      ]
-    }
-  
-  ];
-
   return (
-    
     <div>
-      
       <Navbar openPage={"/about"}/>
 <main className="container mx-auto p-4"> 
       <p className='text-4xl md:text-6xl text-center font-bold'>Versatile team masters every <span className='text-lime-500 transition-colors'>challenge!</span></p>    
@@ -131,45 +65,48 @@ function About() {
 
     <div className=' object-center mx-30 flex flex-wrap' >
 
-{members.map((individualMember) => (
+{MEMBERS.map((individualMember) => {
+
+  const{noun,role, profilephoto,social}=individualMember;
+  return(
           <div
             className='px-30 py-6 rounded-2xl flex flex-col items-center text-center'
-            key={individualMember.name} // Using name as key,as each name is diff.//
+            key={individualMember.name} // Using nounas key,as each nounis diff.//
           >
             <img
               src={individualMember.profilephoto}
               className='size-44 mb-4' 
-              alt={`${individualMember.name}'s profile`}
+              alt={`${individualMember.noun}'s profile`}
             />
             <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2'>{individualMember.name}</p>
             <p className='text-gray-700 text-sm'>{individualMember.role}</p>
             <div className='flex mt-4 gap-4'> 
+
               {individualMember.social.map((socialLink, socialIndex) => (
                 <a
                   href={socialLink.url}
                   target='_blank'
                   rel='noopener noreferrer'
                   key={socialLink.url} 
-                  aria-label={`Visit ${individualMember.name}'s ${socialLink.name || 'social'} profile`}
+                  aria-label={`Visit ${individualMember.noun}'s ${socialLink.noun|| 'social'} profile`}
                 >
                   <img
                     src={socialLink.icon}
                     className='size-8 bg-gray-200 p-1 rounded-xl transition-transform duration-200 hover:scale-120 hover:bg-gray-300'
-                    alt={`${socialLink.name} icon`}
+                    alt={`${socialLink.noun} icon`}
                   />
                 </a>
               ))}
-      
-      
       </div>   
       </div>
-       ))}
-      </div>
-      
-      </main>
-       <Footer/>
-</div>
   )
-}
+})}
+</div>
+</main>
+<Footer/>
+</div>)}
+  
+      
+    
 
-export default About;
+export default About
