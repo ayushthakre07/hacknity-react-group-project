@@ -25,12 +25,13 @@ function HackathonForm() {
   const [errorDescription, setErrorDescription] = useState();
   const [errorDate, setErrorDate] = useState();
   const [errorTime, setErrorTime] = useState();
+  const [errorOrganizer, setErrorOrganizer] = useState();
 
   useEffect(() => {
     if (hackathonData.name === "") {
       setErrorName("");
     } else if (hackathonData.name.length < 3) {
-      setErrorName("Name cannot have less 3 characters");
+      setErrorName("Name cannot have less than 3 characters");
     } else if (hackathonData.name.length > 30) {
       setErrorName("Name cannot have more than 30 charaacters");
     } else {
@@ -62,12 +63,23 @@ function HackathonForm() {
     } else {
       setErrorTime("");
     }
+
+    if (hackathonData.organizer === "") {
+      setErrorOrganizer("");
+    } else if (hackathonData.organizer.length < 3) {
+      setErrorOrganizer("Name cannot have less than 3 characters");
+    } else if (hackathonData.organizer.length > 30) {
+      setErrorOrganizer("Name cannot have more than 30 characters");
+    } else {
+      setErrorOrganizer("");
+    }
   }, [
     hackathonData.name,
     hackathonData.description,
     hackathonData.startDate,
     hackathonData.endDate,
     hackathonData.time,
+    hackathonData.organizer,
   ]);
 
   return (
@@ -221,6 +233,7 @@ function HackathonForm() {
           }
         />
       </div>
+      <span className="text-red-400">{errorOrganizer}</span>
 
       <div className="flex flex-col">
         <Label htmlFor={"theme"} labelTitle={"Theme"} />
