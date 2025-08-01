@@ -19,6 +19,7 @@ function HackathonForm() {
     time: "",
     organizer: "",
     description: "",
+    rules: "",
   });
 
   const [errorName, setErrorName] = useState();
@@ -26,6 +27,7 @@ function HackathonForm() {
   const [errorDate, setErrorDate] = useState();
   const [errorTime, setErrorTime] = useState();
   const [errorOrganizer, setErrorOrganizer] = useState();
+  const [errorRules, setErrorRules] = useState();
 
   useEffect(() => {
     if (hackathonData.name === "") {
@@ -40,8 +42,8 @@ function HackathonForm() {
 
     if (hackathonData.description.length === 0) {
       setErrorDescription("");
-    } else if (hackathonData.description.length < 20) {
-      setErrorDescription("Description cannot have less than 20 characters");
+    } else if (hackathonData.description.length < 50) {
+      setErrorDescription("Description cannot have less than 50 characters");
     } else if (hackathonData.description.length > 1000) {
       setErrorDescription("Description cannot more than 1000 characters");
     } else {
@@ -73,6 +75,16 @@ function HackathonForm() {
     } else {
       setErrorOrganizer("");
     }
+
+    if (hackathonData.rules.length === 0) {
+      setErrorRules("");
+    } else if (hackathonData.rules.length < 50) {
+      setErrorRules("Ruels & Regulations cannot have less than 50 characters");
+    } else if (hackathonData.rules.length > 1000) {
+      setErrorRules("Ruels & Regulations cannot more than 1000 characters");
+    } else {
+      setErrorRules("");
+    }
   }, [
     hackathonData.name,
     hackathonData.description,
@@ -80,6 +92,7 @@ function HackathonForm() {
     hackathonData.endDate,
     hackathonData.time,
     hackathonData.organizer,
+    hackathonData.rules,
   ]);
 
   return (
@@ -236,16 +249,6 @@ function HackathonForm() {
       <span className="text-red-400">{errorOrganizer}</span>
 
       <div className="flex flex-col">
-        <Label htmlFor={"theme"} labelTitle={"Theme"} />
-        <InputField
-          type="text"
-          id="theme"
-          name="theme"
-          placeholder="Hackathon Theme"
-        />
-      </div>
-
-      <div className="flex flex-col">
         <Label htmlFor={"prizes"} labelTitle={"Prizes"} />
         <InputField
           type="number"
@@ -265,8 +268,16 @@ function HackathonForm() {
           name="rules-guidelines"
           id="rules-guidelines"
           placeholder="Add rules and participation guidelines..."
+          value={hackathonData.rules}
+          onchange={(e) =>
+            setHackathonData((prev) => ({
+              ...prev,
+              rules: e.target.value,
+            }))
+          }
         />
       </div>
+      <span className="text-red-400">{errorRules}</span>
 
       <Button BtnTitle={"Submit Hackathon"} type={"submit"} />
     </form>
