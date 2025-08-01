@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import Heading from "../components/Heading.jsx";
 import Button, { ButtonSecondary } from "../components/Button.jsx";
 import RegisterImg from "../../src/assets/Registration.png";
+import UpcomingEvent from "../components/UpcomingEvent.jsx";
 
 function Home() {
   const [formErrors, setFormErrors] = useState({});
@@ -43,13 +44,13 @@ function Home() {
       <Navbar openPage={"/"} />
       <div className="relative flex items-center justify-center p-8 mt-50 ">
         <div className="relative text-center w-4xl">
-          <Heading headingTitle="Welcome to our platform"  />
+          <Heading headingTitle="Welcome to our platform" />
           <p className="text-lg md:text-xl text-gray-700 mb-8">
             Join us and unlock your potential and participate in exciting
             hackathon events.
           </p>
           <Link to="/Discover">
-            <Button BtnTitle="Get Started" onclick="./Login" />
+            <Button BtnTitle="Get Started" />
           </Link>
         </div>
       </div>
@@ -58,11 +59,7 @@ function Home() {
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="md:flex items-center gap-30">
             <div className="md:w-1/2 ">
-              <img
-                src={RegisterImg}
-                alt="Registration"
-                className="h-100 "
-              />
+              <img src={RegisterImg} alt="Registration" className="h-100 " />
             </div>
             <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
               <h2 className="text-3xl font-bold mb-8 text-lime-600">
@@ -124,11 +121,57 @@ function Home() {
                   )}
                 </div>
                 <div className="mx-18">
-                <ButtonSecondary BtnTitle=" Create Account" type="Submit" />
+                  <ButtonSecondary BtnTitle=" Create Account" type="Submit" />
                 </div>
               </form>
             </div>
-            
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div className="container mx-auto px-6 text-center max-w-5xl ">
+          <Heading headingTitle="Upcoming Hackathon Events" />
+          <div className="flex  flex-wrap justify-center mx-4 mt-15">
+            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+              <UpcomingEvent
+                SubHeading="IPL Hackathon"
+                Description="Innovate and pitch your ideas for the future of tech. "
+                Btn={
+                  <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
+                }
+              /> 
+              </div> 
+              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+              <UpcomingEvent
+                SubHeading="CodeSprit"
+                Description="A fast-paced coding challenge to test your skills.. "
+                Btn={
+                  <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
+                }
+              />
+              </div>
+
+              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+              <UpcomingEvent
+                SubHeading="HackMania"
+                Description="Build and collaborate on a project over a weekend. "
+                Btn={
+                  <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
+                }
+              />
+              </div>
+
+              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+              <UpcomingEvent
+                SubHeading="DevJam"
+                Description=" Team up and create a fully functional app in 48 hours. "
+                Btn={
+                  <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
+                }
+              />
+              </div>
+           
           </div>
         </div>
       </div>
