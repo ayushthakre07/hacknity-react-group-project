@@ -3,13 +3,10 @@ import InputField from "./InputField";
 import TextArea from "./TextArea";
 import Label from "./Label";
 import Button from "./Button";
+import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
 
 function HackathonForm() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle form data here
-  };
-
   const [hackathonData, setHackathonData] = useState({
     name: "",
     location: "",
@@ -19,48 +16,64 @@ function HackathonForm() {
     time: "",
     organizer: "",
     description: "",
+    prizes: "",
+    rules: "",
   });
 
   const [errorName, setErrorName] = useState();
   const [errorDescription, setErrorDescription] = useState();
   const [errorDate, setErrorDate] = useState();
   const [errorTime, setErrorTime] = useState();
+  const [errorOrganizer, setErrorOrganizer] = useState();
+  const [errorRules, setErrorRules] = useState();
 
   useEffect(() => {
     if (hackathonData.name === "") {
       setErrorName("");
     } else if (hackathonData.name.length < 3) {
-      setErrorName("Name cannot have less 3 characters");
+      setErrorName("Name cannot have less than 3 characters");
     } else if (hackathonData.name.length > 30) {
-      setErrorName("Name cannot have more than 30 charaacters");
+      setErrorName("Name cannot have more than 30 characters");
     } else {
       setErrorName("");
     }
 
     if (hackathonData.description.length === 0) {
       setErrorDescription("");
-    } else if (hackathonData.description.length < 20) {
-      setErrorDescription("Description cannot have less than 20 characters");
+    } else if (hackathonData.description.length < 50) {
+      setErrorDescription("Description cannot have less than 50 characters");
     } else if (hackathonData.description.length > 1000) {
       setErrorDescription("Description cannot more than 1000 characters");
     } else {
       setErrorDescription("");
     }
 
-    if (!hackathonData.startDate) {
-      setErrorDate("Start Date is required");
-    } else if (!hackathonData.endDate) {
-      setErrorDate("End Date is required");
-    } else if (hackathonData.endDate < hackathonData.startDate) {
+    if (hackathonData.startDate === "" || hackathonData.endDate === "") {
+      setErrorDate("");
+    } else if (hackathonData.startDate > hackathonData.endDate) {
       setErrorDate("End date cannot be before start date");
     } else {
       setErrorDate("");
     }
 
-    if (!hackathonData.time) {
-      setErrorTime("Time is required");
+    if (hackathonData.organizer === "") {
+      setErrorOrganizer("");
+    } else if (hackathonData.organizer.length < 3) {
+      setErrorOrganizer("Name cannot have less than 3 characters");
+    } else if (hackathonData.organizer.length > 30) {
+      setErrorOrganizer("Name cannot have more than 30 characters");
     } else {
-      setErrorTime("");
+      setErrorOrganizer("");
+    }
+
+    if (hackathonData.rules.length === 0) {
+      setErrorRules("");
+    } else if (hackathonData.rules.length < 150) {
+      setErrorRules("Ruels & Regulations cannot have less than 150 characters");
+    } else if (hackathonData.rules.length > 1000) {
+      setErrorRules("Ruels & Regulations cannot more than 1000 characters");
+    } else {
+      setErrorRules("");
     }
   }, [
     hackathonData.name,
@@ -68,15 +81,80 @@ function HackathonForm() {
     hackathonData.startDate,
     hackathonData.endDate,
     hackathonData.time,
+    hackathonData.organizer,
+    hackathonData.rules,
   ]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      errorName ||
+      errorDescription ||
+      errorDate ||
+      errorTime ||
+      errorOrganizer ||
+      errorRules
+    ) {
+      toast.error(
+        "Some fields are invalid or missing. Please check and try again."
+      );
+      return;
+    }
+
+    if (
+      hackathonData.name === "" ||
+      hackathonData.description === "" ||
+      hackathonData.startDate === "" ||
+      hackathonData.endDate === "" ||
+      hackathonData.time === "" ||
+      hackathonData.organizer === "" ||
+      hackathonData.rules === ""
+    ) {
+      toast.error("Please fill in all the required fields.");
+      return;
+    }
+    let existingHackathons =
+      JSON.parse(localStorage.getItem("hackathonData")) || [];
+
+    existingHackathons.push(hackathonData);
+
+    localStorage.setItem("hackathonData", JSON.stringify(existingHackathons));
+
+    toast.success("Your data has been saved.");
+    setHackathonData({
+      name: "",
+      location: "",
+      city: "",
+      startDate: "",
+      endDate: "",
+      time: "",
+      organizer: "",
+      description: "",
+      prizes: "",
+      rules: "",
+    });
+    setErrorName("");
+    setErrorDescription("");
+    setErrorDate("");
+    setErrorTime("");
+    setErrorOrganizer("");
+    setErrorRules("");
+  };
 
   return (
     <form
       onSubmit={handleSubmit}
       className="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
     >
+      <h2 className="text-amber-500 font-bold text-3xl my-10">
+        Create a New Hackathon
+      </h2>
       <div className="flex flex-col">
-        <Label htmlFor={"hackathon-title"} labelTitle={"Hackathon Title"} />
+        <Label
+          htmlFor={"hackathon-title"}
+          labelTitle={"Hackathon Title"}
+          important={true}
+        />
         <InputField
           type="text"
           id="hackathon-title"
@@ -87,11 +165,14 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, name: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorName}</span>
       </div>
-      <span className="text-red-400">{errorName}</span>
-
       <div className="flex flex-col">
-        <Label htmlFor={"hackathon-description"} labelTitle={"Description"} />
+        <Label
+          htmlFor={"hackathon-description"}
+          labelTitle={"Description"}
+          important={true}
+        />
         <TextArea
           name="hackathon-description"
           id="hackathon-description"
@@ -104,13 +185,16 @@ function HackathonForm() {
             }))
           }
         />
+        <span className="text-red-400">{errorDescription}</span>
       </div>
-      <span className="text-red-400">{errorDescription}</span>
-
       <div>
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex flex-col flex-1">
-            <Label htmlFor={"start-date"} labelTitle={"Start Date"} />
+            <Label
+              htmlFor={"start-date"}
+              labelTitle={"Start Date"}
+              important={true}
+            />
             <InputField
               type="date"
               id="start-date"
@@ -127,7 +211,11 @@ function HackathonForm() {
           </div>
 
           <div className="flex flex-col flex-1">
-            <Label htmlFor={"end-date"} labelTitle={"End Date"} />
+            <Label
+              htmlFor={"end-date"}
+              labelTitle={"End Date"}
+              important={true}
+            />
             <InputField
               type="date"
               id="end-date"
@@ -145,9 +233,8 @@ function HackathonForm() {
         </div>
         <span className="text-red-400">{errorDate}</span>
       </div>
-
       <div className="flex flex-col">
-        <Label htmlFor={"time"} labelTitle={"Time"} />
+        <Label htmlFor={"time"} labelTitle={"Time"} important={true} />
         <InputField
           type="time"
           id="time"
@@ -157,11 +244,10 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, time: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorTime}</span>
       </div>
-      <span className="text-red-400">{errorTime}</span>
-
       <div className="flex flex-col">
-        <Label htmlFor={"location"} labelTitle={"Location"} />
+        <Label htmlFor={"location"} labelTitle={"Location"} important={true} />
         <InputField
           type="text"
           id="location"
@@ -173,7 +259,6 @@ function HackathonForm() {
           }
         />
       </div>
-
       <div className="flex flex-col">
         <Label htmlFor={"city"} labelTitle={"City"} />
         <InputField
@@ -187,9 +272,12 @@ function HackathonForm() {
           }
         />
       </div>
-
       <div className="flex flex-col">
-        <Label htmlFor={"organizer-name"} labelTitle={"Organizer's Name"} />
+        <Label
+          htmlFor={"organizer-name"}
+          labelTitle={"Organizer's Name"}
+          important={true}
+        />
         <InputField
           type="text"
           id="organizer-name"
@@ -200,18 +288,8 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, organizer: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorOrganizer}</span>
       </div>
-
-      <div className="flex flex-col">
-        <Label htmlFor={"theme"} labelTitle={"Theme"} />
-        <InputField
-          type="text"
-          id="theme"
-          name="theme"
-          placeholder="Hackathon Theme"
-        />
-      </div>
-
       <div className="flex flex-col">
         <Label htmlFor={"prizes"} labelTitle={"Prizes"} />
         <InputField
@@ -219,22 +297,34 @@ function HackathonForm() {
           id="prizes"
           name="prizes"
           placeholder="Total Prize Amount"
+          value={hackathonData.prizes}
+          onchange={(e) =>
+            setHackathonData((prev) => ({ ...prev, prizes: e.target.value }))
+          }
         />
       </div>
-
       <div className="flex flex-col">
         <Label
           htmlFor={"rules-guidelines"}
           labelTitle={"Rules and Guidelines"}
+          important={true}
         />
         <TextArea
           name="rules-guidelines"
           id="rules-guidelines"
           placeholder="Add rules and participation guidelines..."
+          value={hackathonData.rules}
+          onchange={(e) =>
+            setHackathonData((prev) => ({
+              ...prev,
+              rules: e.target.value,
+            }))
+          }
         />
+        <span className="text-red-400">{errorRules}</span>
       </div>
-
       <Button BtnTitle={"Submit Hackathon"} type={"submit"} />
+      <Toaster />
     </form>
   );
 }
