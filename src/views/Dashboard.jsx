@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./../components/Navbar";
+import Footer from "./../components/Footer";
 import Button from "./../components/Button";
 import { ButtonSecondary } from "./../components/Button";
 import HackathonForm from "./../components/HackathonForm";
@@ -35,6 +36,7 @@ function Dashboard() {
           {hackathonForm ? <HackathonForm /> : <HackthonList />}
         </div>
       </div>
+      <Footer />
     </>
   );
 }
