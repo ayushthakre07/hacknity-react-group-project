@@ -14,7 +14,7 @@ function About() {
     <h1 className='text-4xl my-4 text-center text-gray-400'>Our mission is to provide an intuitive, robust and community-driven platform <br/>for both 
         <span className='text-amber-500 font-extrabold'>   online </span> 
         and <span className='text-amber-500 font-extrabold'>offline</span> game hosting.</h1>
-        <hr className='border-dotted'/>
+        <hr className='border-dotted text-lime-500'/>
         <br/>
         <h2 className='text-4xl font-bold ml-6'> We are committed to </h2>
 <ol className='ml-6 my-2 text-[20px] font-light'>
@@ -28,7 +28,7 @@ function About() {
 </ol>
 </section>
 </p>
-<hr className='border-dotted'/>
+<hr className='border-dotted  text-lime-500'/>
 <br/>
 <section >
   <h1 className='text-2xl md:text-4xl font-extrabold ml-8 '>What We Offer</h1>
@@ -57,7 +57,7 @@ function About() {
 <p><span className=' text-black '> Version Control & Updates:</span> Easily manage different versions of your game and push updates to your player base with our streamlined system.</p>
 </div>
 <br/>
-<hr className='border-dotted'/>
+<hr className='border-dotted  text-lime-500'/>
 <br/>
 </section>  
 
@@ -71,14 +71,14 @@ function About() {
   return(
           <div
             className='px-30 py-6 rounded-2xl flex flex-col items-center text-center'
-            key={individualMember.name} // Using nounas key,as each nounis diff.//
+            key={individualMember.name} // Using noun as key,as each noun is diff.//
           >
             <img
               src={individualMember.profilephoto}
               className='size-44 mb-4' 
               alt={`${individualMember.noun}'s profile`}
             />
-            <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2'>{individualMember.name}</p>
+            <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2'>{individualMember.noun}</p>
             <p className='text-gray-700 text-sm'>{individualMember.role}</p>
             <div className='flex mt-4 gap-4'> 
 
@@ -107,6 +107,4 @@ function About() {
 </div>)}
   
       
-    
-
 export default About
