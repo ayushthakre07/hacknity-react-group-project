@@ -246,7 +246,7 @@ function Home() {
         <div id="registration" className="py-10 bg-gray-100 ">
           <div className="container mx-auto px-6 max-w-5xl">
             <div className="md:flex items-center gap-30">
-              <div className="md:w-1/2 ">
+              <div className="md:w-1/2  ">
                 <img src={RegisterImg} alt="Registration" className="h-100 " />
               </div>
               <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
