@@ -3,7 +3,6 @@ import InputField from "./InputField";
 import TextArea from "./TextArea";
 import Label from "./Label";
 import Button from "./Button";
-import Swal from "sweetalert2";
 import toast, { Toaster } from "react-hot-toast";
 
 function HackathonForm() {
