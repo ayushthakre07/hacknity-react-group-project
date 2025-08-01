@@ -76,7 +76,11 @@ function HackathonForm() {
       className="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
     >
       <div className="flex flex-col">
-        <Label htmlFor={"hackathon-title"} labelTitle={"Hackathon Title"} />
+        <Label
+          htmlFor={"hackathon-title"}
+          labelTitle={"Hackathon Title"}
+          important={true}
+        />
         <InputField
           type="text"
           id="hackathon-title"
@@ -91,7 +95,11 @@ function HackathonForm() {
       <span className="text-red-400">{errorName}</span>
 
       <div className="flex flex-col">
-        <Label htmlFor={"hackathon-description"} labelTitle={"Description"} />
+        <Label
+          htmlFor={"hackathon-description"}
+          labelTitle={"Description"}
+          important={true}
+        />
         <TextArea
           name="hackathon-description"
           id="hackathon-description"
@@ -110,7 +118,11 @@ function HackathonForm() {
       <div>
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex flex-col flex-1">
-            <Label htmlFor={"start-date"} labelTitle={"Start Date"} />
+            <Label
+              htmlFor={"start-date"}
+              labelTitle={"Start Date"}
+              important={true}
+            />
             <InputField
               type="date"
               id="start-date"
@@ -127,7 +139,11 @@ function HackathonForm() {
           </div>
 
           <div className="flex flex-col flex-1">
-            <Label htmlFor={"end-date"} labelTitle={"End Date"} />
+            <Label
+              htmlFor={"end-date"}
+              labelTitle={"End Date"}
+              important={true}
+            />
             <InputField
               type="date"
               id="end-date"
@@ -147,7 +163,7 @@ function HackathonForm() {
       </div>
 
       <div className="flex flex-col">
-        <Label htmlFor={"time"} labelTitle={"Time"} />
+        <Label htmlFor={"time"} labelTitle={"Time"} important={true} />
         <InputField
           type="time"
           id="time"
@@ -161,7 +177,7 @@ function HackathonForm() {
       <span className="text-red-400">{errorTime}</span>
 
       <div className="flex flex-col">
-        <Label htmlFor={"location"} labelTitle={"Location"} />
+        <Label htmlFor={"location"} labelTitle={"Location"} important={true} />
         <InputField
           type="text"
           id="location"
@@ -189,7 +205,11 @@ function HackathonForm() {
       </div>
 
       <div className="flex flex-col">
-        <Label htmlFor={"organizer-name"} labelTitle={"Organizer's Name"} />
+        <Label
+          htmlFor={"organizer-name"}
+          labelTitle={"Organizer's Name"}
+          important={true}
+        />
         <InputField
           type="text"
           id="organizer-name"
@@ -226,6 +246,7 @@ function HackathonForm() {
         <Label
           htmlFor={"rules-guidelines"}
           labelTitle={"Rules and Guidelines"}
+          important={true}
         />
         <TextArea
           name="rules-guidelines"
