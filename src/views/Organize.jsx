@@ -3,11 +3,12 @@ import Navbar from "../components/Navbar";
 import organizeImg from "./../assets/organize.png";
 import { Link } from "react-router";
 import Heading from "./../components/Heading";
+import Footer from "./../components/Footer";
 
 function Organize() {
   return (
     <>
-     <Navbar openPage={"/organize"}/>
+      <Navbar openPage={"/organize"} />
       <section className="py-4 pt-10 flex flex-col lg:flex-row items-center justify-center gap-8">
         <img
           src={organizeImg}
@@ -35,6 +36,7 @@ function Organize() {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   );
 }
