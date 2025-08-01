@@ -110,7 +110,7 @@ const cards  = [{name:"IPL",
  
 ];
 
-function Hackathon() {
+function Hackathon( ) {
   const upcomingEvents = cards.slice(0, 6);
   const pastEvents = cards.slice(6, 10);
 
