@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 
 function About() {
 
- const teamMembers = [
+ const members= [
       {
       name: 'Gajanan Jadhav', 
       role: 'Manager', 
@@ -71,41 +71,42 @@ function About() {
   return (
     
     <div>
-      <Navbar/>
       
-      <p className='text-[80px] text-center font-bold'>Versatile team masters every <span className='text-lime-500 transition-colors'>challenge!</span></p>
-    
+      <Navbar openPage={"/about"}/>
+<main className="container mx-auto p-4"> 
+      <p className='text-4xl md:text-6xl text-center font-bold'>Versatile team masters every <span className='text-lime-500 transition-colors'>challenge!</span></p>    
    <p>
-    <h1 className='text-6xl my-4 text-center text-gray-400'>Our mission is to provide an<br/>
-       intuitive, robust and community-driven platform <br/>for both 
-        <span className='text-fuchsia-400 font-extrabold hover:text-fuchsia-500'>   online </span> 
-        and <span className='text-indigo-400 font-extrabold hover:text-indigo-500'>offline</span> game hosting.</h1>
-        <br/>
+    <section className='my-12'>
+    <h1 className='text-4xl my-4 text-center text-gray-400'>Our mission is to provide an intuitive, robust and community-driven platform <br/>for both 
+        <span className='text-amber-500 font-extrabold'>   online </span> 
+        and <span className='text-amber-500 font-extrabold'>offline</span> game hosting.</h1>
         <hr className='border-dotted'/>
-       <br/> <h2 className='text-6xl font-bold text-center'> We are committed to </h2>
-<ol className='ml-6 my-6 text-[25px] font-light'>
-<li className="py-2 text-gray-500"><span className='text-4xl font-bold text-lime-500'> Empowering Creators:</span><br/>  Offering tools and resources that simplify the hosting process, allowing developers to focus on what they do best - making great games.
+        <br/>
+        <h2 className='text-4xl font-bold ml-6'> We are committed to </h2>
+<ol className='ml-6 my-2 text-[20px] font-light'>
+<li className="py-2 text-gray-500"><span className='text-2xl font-bold text-lime-500'> Empowering Creators:</span><br/>  Offering tools and resources that simplify the hosting process, allowing developers to focus on what they do best - making great games.
 </li>
-<li className="py-2 text-gray-500 "><span className='text-4xl font-bold text-lime-500'>Enhancing Player Experience:</span> <br/> Ensuring stable, low-latency, and diverse gaming environments for players worldwide.
+<li className="py-2 text-gray-500 "><span className='text-2xl font-bold text-lime-500'>Enhancing Player Experience:</span> <br/> Ensuring stable, low-latency, and diverse gaming environments for players worldwide.
  </li>
  <li className="py-2  text-gray-500">
-<span className='text-4xl font-bold text-lime-500'>Fostering Community: </span> <br/>Building a supportive ecosystem where developers can share, learn, and grow, and players can discover new favorites and connect with fellow enthusiasts.
+<span className='text-2xl font-bold text-lime-500'>Fostering Community: </span> <br/>Building a supportive ecosystem where developers can share, learn, and grow, and players can discover new favorites and connect with fellow enthusiasts.
  </li>
 </ol>
+</section>
 </p>
 <hr className='border-dotted'/>
 <br/>
-<div >
-  <h1 className='text-6xl font-extrabold text-center '>What We Offer</h1>
+<section >
+  <h1 className='text-2xl md:text-4xl font-extrabold ml-8 '>What We Offer</h1>
   <br/>
-  <h2 className='text-center text-[45px] font-bold text-gray-600'> HACKNITY is designed to cater to a wide spectrum of hosting needs. </h2>
-    <br/><span className='text-4xl text-gray-500 ml-9 font-medium'>Here's what makes us the ideal choice for your game hosting :</span>
+  <h2 className=' ml-8  md:text-3xl font-bold text-gray-600'> HACKNITY is designed to cater to a wide spectrum of hosting needs. </h2>
+  <br/>
+  <span className='text-xl text-gray-500  md:text-4xl ml-8 font-medium'>Here's what makes us the ideal choice for your game hosting :</span>
     
  <br/>
 
-<br/>
-  <h1  className='text-4xl font-extrabold ml-9 text-lime-500'>For Online Games</h1><br/>
- <div className='text-2xl ml-8 text-gray-500 font-light'>
+  <h1  className='text-2xl font-extrabold ml-8 text-lime-500 mt-3'>For Online Games</h1>
+ <div className='text-xl ml-8 text-gray-500 font-light'>
  <p ><span  className=' text-black '>Robust Server Infrastructure:</span><br/> Our infrastructure is built for scalability, capable of handling sudden 
   spikes in player numbers without a hitch.</p>
 
@@ -114,49 +115,60 @@ function About() {
 
  </div> 
 <br/>
-<h1  className='text-4xl font-extrabold ml-9 text-lime-500'>
+<h1  className='text-2xl font-extrabold ml-9 text-lime-500'>
   For Offline Games
 </h1>
-<br/>
-<div className='text-2xl ml-8  text-gray-500 font-light'>
+<div className='text-xl ml-8  text-gray-500 font-light'>
 <p><span className=' text-black '> Secure Content Delivery: </span> Even for offline games, secure and efficient content delivery is crucial. We provide reliable hosting for your game files, ensuring players can download your game quickly and safely.</p>
 <p><span className=' text-black '> Version Control & Updates:</span> Easily manage different versions of your game and push updates to your player base with our streamlined system.</p>
 </div>
 <br/>
-<hr/>
+<hr className='border-dotted'/>
 <br/>
-</div>   
-    <div className='place-items-end-safe pt-[40px] flex flex-wrap px-[50px] py-[50px] border-2 ml-[200px] mr-[200px]' >
-      <div className='border-2 border-amber-500 px-4 py-4 rounded-2xl ml-[20px]'>
-     <img src='https://avatar.iran.liara.run/public/21' className='size-44  ml-1 '/>
-      <p className='py-4 px-10 bg-amber-400 mt-[-10px] rounded-lg'>Ayush Thakre</p>
-      <p  className='px-10'>UI/UX Designer</p>
-      <div className='flex mt-4 ml-4'>
-      <a href='https://www.instagram.com/' target='_blank'>
-       <img src='https://cdn-icons-png.flaticon.com/128/1384/1384031.png ' className='size-8 bg-gray-300 py-1 px-1 rounded-xl'/></a>
-       <a href='' target='_blank'>
-       <img src='https://cdn-icons-png.flaticon.com/128/1006/1006771.png' className='size-8 bg-gray-300 py-1 px-1 rounded-xl ml-8'/>  
-       </a>
-       <a href='' target='_blank'>
-       <img src='https://cdn-icons-png.flaticon.com/128/646/646094.png' className='size-8 bg-gray-300 py-1 px-1 rounded-xl ml-8'/></a>
+</section>  
+
+ <h1 className='text-4xl font-extrabold text-center mb-8'>Meet Our Team</h1>
+
+    <div className=' object-center mx-30 flex flex-wrap' >
+
+{members.map((individualMember) => (
+          <div
+            className='px-30 py-6 rounded-2xl flex flex-col items-center text-center'
+            key={individualMember.name} // Using name as key,as each name is diff.//
+          >
+            <img
+              src={individualMember.profilephoto}
+              className='size-44 mb-4' 
+              alt={`${individualMember.name}'s profile`}
+            />
+            <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2'>{individualMember.name}</p>
+            <p className='text-gray-700 text-sm'>{individualMember.role}</p>
+            <div className='flex mt-4 gap-4'> 
+              {individualMember.social.map((socialLink, socialIndex) => (
+                <a
+                  href={socialLink.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  key={socialLink.url} 
+                  aria-label={`Visit ${individualMember.name}'s ${socialLink.name || 'social'} profile`}
+                >
+                  <img
+                    src={socialLink.icon}
+                    className='size-8 bg-gray-200 p-1 rounded-xl transition-transform duration-200 hover:scale-120 hover:bg-gray-300'
+                    alt={`${socialLink.name} icon`}
+                  />
+                </a>
+              ))}
       
-      <p className='py-4 px-10 bg-amber-300 mt-[-10px] rounded-lg'>{member.name}</p>
-      <p  className='px-10 text-center'>{member.role}</p>
-
-
-      <div className='flex mt-4 ml-1 px-2'>
-        {member.social.map((socialLink) => (
-      <a href={socialLink.url} 
-      target='_blank'>
-       <img src={socialLink.icon}
-        className='size-8 ml-4 bg-gray-200 p-1 rounded-xl transition-transform duration-200 hover:scale-120 hover:bg-gray-300'/></a>
-        ))}
-      </div>
+      
       </div>   
       </div>
+       ))}
       </div>
+      
+      </main>
+       <Footer/>
 </div>
-
   )
 }
 
