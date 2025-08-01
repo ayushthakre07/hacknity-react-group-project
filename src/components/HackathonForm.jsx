@@ -146,6 +146,9 @@ function HackathonForm() {
       onSubmit={handleSubmit}
       className="bg-white shadow-xl rounded-lg p-8 w-full max-w-2xl mx-auto flex flex-col gap-6"
     >
+      <h2 className="text-amber-500 font-bold text-3xl my-10">
+        Create a New Hackathon
+      </h2>
       <div className="flex flex-col">
         <Label
           htmlFor={"hackathon-title"}
