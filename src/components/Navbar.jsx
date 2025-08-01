@@ -19,8 +19,8 @@ function Navbar({ openPage }) {
       <nav className="sticky top-0 bg-white flex-col flex lg:flex-row items-center justify-between lg:justify-around gap-5 lg:gap-15 p-5 shadow-lg">
         <div className="flex justify-between w-full item-center">
           <div className="flex items-center gap-1 cursor-pointer">
-            <img src={Logo} alt="Logo" className="w-10" />
-            <h1 className="text-3xl md:text-4xl font-extrabold font-sans text-lime-500">
+            <img src={Logo} alt="Logo" className="w-13" />
+            <h1 className="text-3xl md:text-4xl font-extrabold font-sans text-gray-800">
               Hacknity
             </h1>
           </div>
