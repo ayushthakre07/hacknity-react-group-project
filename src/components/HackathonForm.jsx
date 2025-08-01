@@ -3,11 +3,37 @@ import InputField from "./InputField";
 import TextArea from "./TextArea";
 import Label from "./Label";
 import Button from "./Button";
+import Swal from "sweetalert2";
+import toast, { Toaster } from "react-hot-toast";
 
 function HackathonForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle form data here
+    if (
+      errorName ||
+      errorDescription ||
+      errorTime ||
+      errorOrganizer ||
+      errorRules
+    ) {
+      toast.error("Fix the error first.");
+      return;
+    }
+
+    if (
+      hackathonData.name === "" ||
+      hackathonData.description === "" ||
+      hackathonData.startDate === "" ||
+      hackathonData.endDate === "" ||
+      hackathonData.time === "" ||
+      hackathonData.organizer === "" ||
+      hackathonData.rules === ""
+    ) {
+      toast.error("Please fill in all the required fields.");
+      return;
+    }
+
+    toast.success("Your data has been saved.");
   };
 
   const [hackathonData, setHackathonData] = useState({
@@ -24,7 +50,6 @@ function HackathonForm() {
 
   const [errorName, setErrorName] = useState();
   const [errorDescription, setErrorDescription] = useState();
-  const [errorDate, setErrorDate] = useState();
   const [errorTime, setErrorTime] = useState();
   const [errorOrganizer, setErrorOrganizer] = useState();
   const [errorRules, setErrorRules] = useState();
@@ -48,16 +73,6 @@ function HackathonForm() {
       setErrorDescription("Description cannot more than 1000 characters");
     } else {
       setErrorDescription("");
-    }
-
-    if (!hackathonData.startDate) {
-      setErrorDate("Start Date is required");
-    } else if (!hackathonData.endDate) {
-      setErrorDate("End Date is required");
-    } else if (hackathonData.endDate < hackathonData.startDate) {
-      setErrorDate("End date cannot be before start date");
-    } else {
-      setErrorDate("");
     }
 
     if (!hackathonData.time) {
@@ -116,9 +131,8 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, name: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorName}</span>
       </div>
-      <span className="text-red-400">{errorName}</span>
-
       <div className="flex flex-col">
         <Label
           htmlFor={"hackathon-description"}
@@ -137,56 +151,52 @@ function HackathonForm() {
             }))
           }
         />
+        <span className="text-red-400">{errorDescription}</span>
       </div>
-      <span className="text-red-400">{errorDescription}</span>
 
-      <div>
-        <div className="flex flex-col md:flex-row gap-6">
-          <div className="flex flex-col flex-1">
-            <Label
-              htmlFor={"start-date"}
-              labelTitle={"Start Date"}
-              important={true}
-            />
-            <InputField
-              type="date"
-              id="start-date"
-              name="start-date"
-              min={new Date().toISOString().split("T")[0]}
-              value={hackathonData.startDate}
-              onchange={(e) =>
-                setHackathonData((prev) => ({
-                  ...prev,
-                  startDate: e.target.value,
-                }))
-              }
-            />
-          </div>
-
-          <div className="flex flex-col flex-1">
-            <Label
-              htmlFor={"end-date"}
-              labelTitle={"End Date"}
-              important={true}
-            />
-            <InputField
-              type="date"
-              id="end-date"
-              name="end-date"
-              min={new Date().toISOString().split("T")[0]}
-              value={hackathonData.endDate}
-              onchange={(e) =>
-                setHackathonData((prev) => ({
-                  ...prev,
-                  endDate: e.target.value,
-                }))
-              }
-            />
-          </div>
+      <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-col flex-1">
+          <Label
+            htmlFor={"start-date"}
+            labelTitle={"Start Date"}
+            important={true}
+          />
+          <InputField
+            type="date"
+            id="start-date"
+            name="start-date"
+            min={new Date().toISOString().split("T")[0]}
+            value={hackathonData.startDate}
+            onchange={(e) =>
+              setHackathonData((prev) => ({
+                ...prev,
+                startDate: e.target.value,
+              }))
+            }
+          />
         </div>
-        <span className="text-red-400">{errorDate}</span>
-      </div>
 
+        <div className="flex flex-col flex-1">
+          <Label
+            htmlFor={"end-date"}
+            labelTitle={"End Date"}
+            important={true}
+          />
+          <InputField
+            type="date"
+            id="end-date"
+            name="end-date"
+            min={new Date().toISOString().split("T")[0]}
+            value={hackathonData.endDate}
+            onchange={(e) =>
+              setHackathonData((prev) => ({
+                ...prev,
+                endDate: e.target.value,
+              }))
+            }
+          />
+        </div>
+      </div>
       <div className="flex flex-col">
         <Label htmlFor={"time"} labelTitle={"Time"} important={true} />
         <InputField
@@ -198,9 +208,8 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, time: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorTime}</span>
       </div>
-      <span className="text-red-400">{errorTime}</span>
-
       <div className="flex flex-col">
         <Label htmlFor={"location"} labelTitle={"Location"} important={true} />
         <InputField
@@ -214,7 +223,6 @@ function HackathonForm() {
           }
         />
       </div>
-
       <div className="flex flex-col">
         <Label htmlFor={"city"} labelTitle={"City"} />
         <InputField
@@ -228,7 +236,6 @@ function HackathonForm() {
           }
         />
       </div>
-
       <div className="flex flex-col">
         <Label
           htmlFor={"organizer-name"}
@@ -245,9 +252,8 @@ function HackathonForm() {
             setHackathonData((prev) => ({ ...prev, organizer: e.target.value }))
           }
         />
+        <span className="text-red-400">{errorOrganizer}</span>
       </div>
-      <span className="text-red-400">{errorOrganizer}</span>
-
       <div className="flex flex-col">
         <Label htmlFor={"prizes"} labelTitle={"Prizes"} />
         <InputField
@@ -257,7 +263,6 @@ function HackathonForm() {
           placeholder="Total Prize Amount"
         />
       </div>
-
       <div className="flex flex-col">
         <Label
           htmlFor={"rules-guidelines"}
@@ -276,10 +281,10 @@ function HackathonForm() {
             }))
           }
         />
+        <span className="text-red-400">{errorRules}</span>
       </div>
-      <span className="text-red-400">{errorRules}</span>
-
       <Button BtnTitle={"Submit Hackathon"} type={"submit"} />
+      <Toaster />
     </form>
   );
 }
