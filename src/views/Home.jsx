@@ -6,6 +6,10 @@ import Heading from "../components/Heading.jsx";
 import Button, { ButtonSecondary } from "../components/Button.jsx";
 import RegisterImg from "../../src/assets/Registration.png";
 import UpcomingEvent from "../components/UpcomingEvent.jsx";
+import JoinUs from "../components/JoinUs.jsx";
+import SkillSImg from "../../src/assets/Skills.png";
+import CollaborationImg from "../../src/assets/Collaboration.png";
+import MentorshipImp from "../../src/assets/Mentorship.png";
 
 function Home() {
   const [formErrors, setFormErrors] = useState({});
@@ -140,9 +144,9 @@ function Home() {
                 Btn={
                   <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
                 }
-              /> 
-              </div> 
-              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+              />
+            </div>
+            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
               <UpcomingEvent
                 SubHeading="CodeSprit"
                 Description="A fast-paced coding challenge to test your skills.. "
@@ -150,9 +154,9 @@ function Home() {
                   <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
                 }
               />
-              </div>
+            </div>
 
-              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
               <UpcomingEvent
                 SubHeading="HackMania"
                 Description="Build and collaborate on a project over a weekend. "
@@ -160,9 +164,9 @@ function Home() {
                   <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
                 }
               />
-              </div>
+            </div>
 
-              <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
               <UpcomingEvent
                 SubHeading="DevJam"
                 Description=" Team up and create a fully functional app in 48 hours. "
@@ -170,8 +174,28 @@ function Home() {
                   <Button BtnTitle={<Link to="./Hackathon">Apply Now</Link>} />
                 }
               />
-              </div>
-           
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <Heading headingTitle="Why Join Us?" />
+          <div className="flex flex-wrap justify-center mx-4 mt-15">
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+            <JoinUs Alt="SkillsIcon" Heading="Learn New Skills" Description="Access a vast library of tutorials, courses, and resources to master new technologies." Img={SkillSImg} />
+            </div> 
+
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+            <JoinUs Alt="CollaborationIcon" Heading=" Collaborate on Projects" Description="Connect with like-minded individuals to build innovative
+                  projects and solve real-world problems." Img={CollaborationImg} />
+            </div>
+
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+            <JoinUs Alt="ExpertIcon" Heading="Expert Mentorship" Description="Get guidance from  experts and seasoned developers who
+                  are ready to help." Img={MentorshipImp} />
+            </div>
           </div>
         </div>
       </div>
