@@ -199,6 +199,55 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <div className="py-7 bg-gray-100">
+        <div className="container mx-auto px-6 text-center"> 
+          <Heading headingTitle="How It Works"/>
+          <div className="flex  mx-4 my-10">
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center border-4 border-lime-500 mb-4">
+                  <span className="text-3xl font-bold text-lime-500">1</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-orange-600">
+                  Sign Up
+                </h3>
+                <p className="text-gray-600">
+                  Create your free account <br/>in just a few clicks.
+                </p>
+              </div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/128/13726/13726822.png" className="h-25"/>
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center border-4 border-lime-500 mb-4">
+                  <span className="text-3xl font-bold text-lime-500">2</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-orange-600">
+                  Explore
+                </h3>
+                <p className="text-gray-600">
+                  Browse tutorials, quizzes, and <br/>projects to find what you need.
+                </p>
+              </div>
+            </div>
+            <img src="https://cdn-icons-png.flaticon.com/128/13726/13726822.png" className="h-25"/>
+            <div className="w-full sm:w-1/2 md:w-1/3 px-4 mb-8">
+              <div className="flex flex-col items-center">
+                <div className="bg-white p-6 rounded-full w-20 h-20 flex items-center justify-center border-4 border-lime-500 mb-4">
+                  <span className="text-3xl font-bold text-lime-500">3</span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2 text-orange-600">
+                  Start Building
+                </h3>
+                <p className="text-gray-600">
+                  Join a community project or <br/>start your own and get to work.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
