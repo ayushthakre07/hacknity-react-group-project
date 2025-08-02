@@ -4,20 +4,21 @@ import Footer from '../components/Footer';
 
 function App() {
   return (
+
     <div className="bg-gray-100 min-h-screen">
-      {/* Navbar with padding */}
+      
       <div className="mb-10">
         <Navbar />
       </div>
 
-      {/* Form Container with margin bottom */}
+      
       <div className="w-[90%] mx-auto  p-10 rounded-lg  mb-24">
         <h1 className="text-5xl font-extrabold text-lime-600 mb-12">Profile</h1>
 
         <form className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* LEFT COLUMN — Basic Info + Education */}
+          
           <div className="space-y-10">
-            {/* Basic Info */}
+            
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">Basic Info</h2>
               <p className="text-gray-500 mb-4">Just the essentials.</p>
@@ -52,7 +53,7 @@ function App() {
               </div>
             </div>
 
-            {/* Education */}
+            
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">Education</h2>
               <p className="text-gray-500 mb-4">All journeys count.</p>
@@ -108,9 +109,9 @@ function App() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN — Social Links + Contact Info */}
+          
           <div className="space-y-10">
-            {/* Social Links */}
+            
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">Social Links</h2>
               <p className="text-gray-500 mb-4">Let others connect with you.</p>
@@ -127,12 +128,12 @@ function App() {
               ))}
             </div>
 
-            {/* Contact Info */}
+            
             <div>
               <h2 className="text-2xl font-semibold text-gray-800 mb-2">How Can We Reach You?</h2>
               <p className="text-gray-500 mb-4">For updates and communication.</p>
 
-              {/* Email */}
+              
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
                 <div className="flex">
@@ -146,7 +147,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Phone */}
+              
               <div className="mt-4">
                 <label className="block text-sm font-medium text-gray-700 mb-1">Phone number</label>
                 <div className="flex gap-2">
@@ -158,7 +159,7 @@ function App() {
               </div>
             </div>
 
-            {/* Submit Button */}
+            
             <div className="text-right">
               <button type="submit" className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-2 rounded-md transition-all duration-200">
                 Save Profile
@@ -168,7 +169,7 @@ function App() {
         </form>
       </div>
 
-      {/* Footer */}
+      
       <Footer />
     </div>
   );
