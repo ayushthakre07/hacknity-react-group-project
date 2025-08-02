@@ -109,9 +109,9 @@ Offering tools and resources that simplify the hosting process, allowing develop
 
 <section className="my-12">
   <hr className="border-t-2 border-dotted border-lime-500 my-8" />
- <h1 className='text-3xl font-extrabold text-center mb-8'>MEET OUR
-   <span className=' text-lime-500 underline  '>HACKNITY</span> 
-   TEAM
+ <h1 className='text-3xl font-extrabold text-center mb-8'>MEET OUR {''}
+    <span className=' text-lime-500   '> HACKNITY </span> 
+TEAM
     </h1>
     <div className=' grid grid-cols-1 lg:grid-cols-3 gap-6 justify-items-center' >
 
