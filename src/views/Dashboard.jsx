@@ -14,7 +14,7 @@ function Dashboard() {
     <>
       <Navbar />
 
-      <div className="bg-gray-50 text-gray-900 px-4 py-8 sm:px-6 lg:px-12">
+      <div className="bg-gray-50 text-gray-900 px-4 py-8 sm:px-6 lg:px-15">
         <Heading
           headingTitle={"Hackathon Hosting Dashboard"}
           customStyle={"mt-3! mb-10!"}

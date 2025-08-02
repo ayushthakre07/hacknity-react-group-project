@@ -8,31 +8,33 @@ function HackthonList() {
   return (
     <>
       {hacksInDashboard.length > 0 ? (
-        hacksInDashboard.map((hackathon, index) => {
-          const {
-            name,
-            description,
-            startDate,
-            endDate,
-            time,
-            organizer,
-            prizes,
-            rules,
-          } = hackathon;
-          return (
-            <DashBoardCard
-              key={index}
-              name={name}
-              startDate={startDate}
-              endDate={endDate}
-              time={time}
-              prizes={prizes}
-              organizer={organizer}
-              description={description}
-              rules={rules}
-            />
-          );
-        })
+        <div className="flex flex-row justify-center gap-10 flex-wrap w-full">
+          {hacksInDashboard.map((hackathon, index) => {
+            const {
+              name,
+              description,
+              startDate,
+              endDate,
+              time,
+              organizer,
+              prizes,
+              rules,
+            } = hackathon;
+            return (
+              <DashBoardCard
+                key={index}
+                name={name}
+                startDate={startDate}
+                endDate={endDate}
+                time={time}
+                prizes={prizes}
+                organizer={organizer}
+                description={description}
+                rules={rules}
+              />
+            );
+          })}
+        </div>
       ) : (
         <div className="text-center text-xl font-medium text-gray-800 w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6 sm:p-8">
           <img src={viewHackathonImg} alt="Image" className="w-70 mx-auto" />
