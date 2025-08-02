@@ -1,5 +1,6 @@
 import RavikantProfile from '../../src/assets/RavikantPP.png'
 import GajananProfile from '../../src/assets/GajananPP.png'
+import AyushPP from '../../src/assets/AyushPP.png'
 
 const MEMBERS= [
       {
@@ -45,7 +46,7 @@ const MEMBERS= [
        {
       noun: 'Ayush Thakre', 
       role: 'UI/UX Designer', 
-      profilephoto: 'https://profilephoto.iran.liara.run/public/22', 
+      profilephoto: AyushPP, 
       social: [
         { url: 'https://peerlist.io/scroll', icon: 'https://cdn-icons-png.flaticon.com/128/103/103946.png' },
         {  url: 'https://www.linkedin.com/in/utkarsha-shende-344b57231/', icon: 'https://cdn-icons-png.flaticon.com/128/4494/4494471.png' },
