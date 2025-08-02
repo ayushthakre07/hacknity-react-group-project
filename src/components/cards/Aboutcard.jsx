@@ -2,17 +2,16 @@ import React from 'react'
 
 function Aboutcard( individualMember) {
   return (
-
           <div
-            className='px-30 py-6 rounded-2xl flex flex-col items-center text-center'
+            className='px-28 py-6 rounded-2xl flex flex-col items-center text-center'
             key={individualMember.name} // Using noun as key,as each noun is diff.//
           >
             <img
               src={individualMember.profilephoto}
-              className='size-44 mb-4' 
+              className='size-44 mb-4 rounded-t-2xl border-2 border-gray-100' 
               alt={`${individualMember.noun}'s profile`}
             />
-            <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2'>{individualMember.noun}</p>
+            <p className='py-2 px-6 bg-amber-400 rounded-lg text-lg font-semibold mb-2 mt-[-10px]'>{individualMember.noun}</p>
             <p className='text-gray-700 text-sm'>{individualMember.role}</p>
             <div className='flex mt-4 gap-4'> 
 
