@@ -28,6 +28,12 @@ function DashBoardCard({
       <div className="grid grid-cols-1 md:grid-cols-2 w-full mb-2">
         <div className="space-y-3 ">
           <DashCardData
+            Icon={Loader}
+            dataTitle={"Organizer:"}
+            data={organizer}
+          />
+
+          <DashCardData
             Icon={CalendarDays}
             dataTitle={"Start Date:"}
             data={startDate}
@@ -49,12 +55,6 @@ function DashBoardCard({
         </div>
 
         <div className="space-y-3">
-          <DashCardData
-            Icon={Loader}
-            dataTitle={"Organizer:"}
-            data={organizer}
-          />
-
           <DashCardData
             Icon={Notebook}
             dataTitle={"Description:"}
